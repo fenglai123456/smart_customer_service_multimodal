@@ -1,6 +1,6 @@
 # 模型文件说明
 
-本目录保留课程 demo 可以直接运行的小模型，便于老师下载仓库后查看和演示。
+本目录保留课程 demo 可以直接运行的模型文件，便于老师下载仓库后查看和演示。
 
 ## 已上传
 
@@ -12,9 +12,9 @@
 - `librispeech_lstm.pt` / `audio_mfcc_classifier.joblib`：语音声学分支。
 - `customer_image_binary_cnn.pt`：客服截图/普通图片二分类辅助模型。
 
-## 未上传
+## 可复现文件
 
-以下文件较大或属于严格训练过程中的中间产物，不适合直接提交到普通 GitHub 仓库：
+以下文件属于训练过程中的大文件或中间产物，可根据训练脚本重新生成：
 
 - `text_bert_classifier/model.safetensors`
 - `customer_screenshot_intent_cnn*.pt`
