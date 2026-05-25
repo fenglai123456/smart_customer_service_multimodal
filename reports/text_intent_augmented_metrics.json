@@ -1,0 +1,53 @@
+{
+  "model": "TF-IDF(char 2-5gram) + LogisticRegression",
+  "task": "augmented customer-service text intent classification",
+  "samples": 2730,
+  "train_size": 2047,
+  "test_size": 683,
+  "accuracy": 1.0,
+  "classification_report": {
+    "complaint": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 127.0
+    },
+    "consult": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 143.0
+    },
+    "howto": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 158.0
+    },
+    "refund": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 127.0
+    },
+    "repair": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 128.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 683.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 683.0
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "case_id": "02_order_consult",
+  "scenario": "订单咨询",
+  "text": "我想查订单物流和配送进度",
+  "voice_text": "帮我看一下这个订单现在发到哪里了",
+  "emotion": "neutral",
+  "screenshot_file": "order_0001.png",
+  "emotion_image_file": "face_02_order_nonangry_fer2013.png",
+  "audio_file": "voice_02_order_librispeech.flac",
+  "expected_screenshot_class": "order",
+  "expected_intent": "consult",
+  "expected_intent_label": "咨询",
+  "note": "完整多模态演示用例：订单截图 + 中性表情 + 订单查询文本。"
+}

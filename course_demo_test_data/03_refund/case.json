@@ -1,0 +1,14 @@
+{
+  "case_id": "03_refund",
+  "scenario": "退款售后",
+  "text": "我要申请退款，想知道钱什么时候退回",
+  "voice_text": "订单取消了，我需要尽快退款",
+  "emotion": "neutral",
+  "screenshot_file": "refund_0001.png",
+  "emotion_image_file": "face_03_refund_nonangry_fer2013.png",
+  "audio_file": "voice_03_refund_librispeech.flac",
+  "expected_screenshot_class": "refund",
+  "expected_intent": "refund",
+  "expected_intent_label": "退款",
+  "note": "完整多模态演示用例：退款截图 + 退款文本。"
+}

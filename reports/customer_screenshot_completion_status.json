@@ -1,0 +1,117 @@
+{
+  "task": "strict public/traceable customer screenshot five-class status",
+  "target_accuracy": 0.82,
+  "current_official": {
+    "samples": 661,
+    "best_accuracy": 0.4701,
+    "accuracy": 0.4701,
+    "split_strategy": "source_group",
+    "filters": {
+      "source_kinds": [
+        "embedded_asset",
+        "seed",
+        "webpage_viewport"
+      ],
+      "min_edge_score": 12.0,
+      "min_contrast": 25.0
+    },
+    "label_counts": {
+      "fault": 115,
+      "howto": 127,
+      "normal": 184,
+      "order": 130,
+      "refund": 105
+    }
+  },
+  "full_public_subset": {
+    "samples": 1748,
+    "label_counts": {
+      "fault": 322,
+      "howto": 331,
+      "normal": 398,
+      "order": 341,
+      "refund": 356
+    },
+    "kind_counts": {
+      "article_tile": 543,
+      "embedded_asset": 408,
+      "seed": 4,
+      "webpage_viewport": 793
+    },
+    "high_detail_counts": {
+      "fault": 133,
+      "howto": 145,
+      "normal": 209,
+      "order": 145,
+      "refund": 123
+    }
+  },
+  "additional_trials": {
+    "class_weight_old_subset": {
+      "samples": 496,
+      "best_accuracy": 0.5287,
+      "image_size": 224,
+      "class_weight": true,
+      "freeze_backbone": true,
+      "filters": {
+        "source_kinds": [
+          "embedded_asset",
+          "seed",
+          "webpage_viewport"
+        ],
+        "min_edge_score": 12.0,
+        "min_contrast": 25.0
+      }
+    },
+    "unfrozen_old_subset": {
+      "samples": 496,
+      "best_accuracy": 0.4598,
+      "image_size": 224,
+      "class_weight": true,
+      "freeze_backbone": false,
+      "filters": {
+        "source_kinds": [
+          "embedded_asset",
+          "seed",
+          "webpage_viewport"
+        ],
+        "min_edge_score": 12.0,
+        "min_contrast": 25.0
+      }
+    },
+    "high_resolution_expanded": {
+      "samples": 661,
+      "best_accuracy": 0.4274,
+      "image_size": 384,
+      "class_weight": false,
+      "freeze_backbone": true,
+      "filters": {
+        "source_kinds": [
+          "embedded_asset",
+          "seed",
+          "webpage_viewport"
+        ],
+        "min_edge_score": 12.0,
+        "min_contrast": 25.0
+      }
+    },
+    "deduplicated_expanded": {
+      "samples": 573,
+      "best_accuracy": 0.3491,
+      "image_size": 224,
+      "class_weight": false,
+      "freeze_backbone": true,
+      "filters": {
+        "source_kinds": [
+          "embedded_asset",
+          "seed",
+          "webpage_viewport"
+        ],
+        "min_edge_score": 12.0,
+        "min_contrast": 25.0,
+        "drop_cross_label_duplicates": true
+      }
+    }
+  },
+  "conclusion": "not_ready; current strict public screenshot data does not support 82% five-class source-group generalization"
+}

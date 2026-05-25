@@ -1,0 +1,46 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Runtime logs and local outputs
+*.log
+server*.err.log
+server*.out.log
+data/interaction_log.jsonl
+
+# Uploaded user files are runtime artifacts; keep the folder itself.
+uploads/*
+!uploads/.gitkeep
+
+# Large downloaded public datasets should be reproduced from docs/DATASET_DOWNLOADS.md.
+datasets/
+
+# Large trained artifacts are described in README/docs and can be regenerated.
+# Keep the lightweight demo/runtime models below so the course demo can run.
+models/text_bert_classifier/model.safetensors
+models/customer_screenshot_intent_cnn*.pt
+models/coco_cnn.pt
+
+# Intermediate feature caches are reproducible and not needed for code review.
+models/*features*.npz
+
+# Local secrets and machine-specific config
+.env
+.env.*
+*.local
+
+# Optional notebook checkpoints
+.ipynb_checkpoints/

@@ -1,0 +1,144 @@
+{
+  "task": "course demo Flask API verification",
+  "samples": 5,
+  "passed": 5,
+  "accuracy": 1.0,
+  "rows": [
+    {
+      "scenario": "故障报修",
+      "image": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\fault\\fault_0001.png",
+      "text": "页面一直报错，支付失败，帮我报修",
+      "expected": "repair",
+      "predicted": "repair",
+      "intent_label": "故障报修",
+      "confidence": 0.932,
+      "need_human": false,
+      "screenshot_cnn": {
+        "class_index": 0,
+        "class_name": "fault",
+        "confidence": 1.0,
+        "label": "故障截图",
+        "model": "demo_screenshot_intent_cnn.pt",
+        "probabilities": {
+          "fault": 1.0,
+          "howto": 0.0,
+          "normal": 0.0,
+          "order": 0.0,
+          "refund": 0.0
+        },
+        "source": "pytorch_cnn",
+        "summary": "截图 CNN/规则识别为故障或异常页面，优先作为故障报修线索参与融合。"
+      },
+      "ok": true
+    },
+    {
+      "scenario": "订单咨询",
+      "image": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\order\\order_0001.png",
+      "text": "我想查订单物流和配送进度",
+      "expected": "consult",
+      "predicted": "consult",
+      "intent_label": "咨询",
+      "confidence": 0.9667,
+      "need_human": false,
+      "screenshot_cnn": {
+        "class_index": 1,
+        "class_name": "order",
+        "confidence": 1.0,
+        "label": "订单截图",
+        "model": "demo_screenshot_intent_cnn.pt",
+        "probabilities": {
+          "fault": 0.0,
+          "howto": 0.0,
+          "normal": 0.0,
+          "order": 1.0,
+          "refund": 0.0
+        },
+        "source": "pytorch_cnn",
+        "summary": "截图 CNN/规则识别为订单或物流页面，优先作为订单咨询线索参与融合。"
+      },
+      "ok": true
+    },
+    {
+      "scenario": "退款售后",
+      "image": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\refund\\refund_0001.png",
+      "text": "我要申请退款，想知道钱什么时候退回",
+      "expected": "refund",
+      "predicted": "refund",
+      "intent_label": "退款",
+      "confidence": 0.7183,
+      "need_human": false,
+      "screenshot_cnn": {
+        "class_index": 2,
+        "class_name": "refund",
+        "confidence": 1.0,
+        "label": "退款截图",
+        "model": "demo_screenshot_intent_cnn.pt",
+        "probabilities": {
+          "fault": 0.0,
+          "howto": 0.0,
+          "normal": 0.0,
+          "order": 0.0,
+          "refund": 1.0
+        },
+        "source": "pytorch_cnn",
+        "summary": "截图 CNN/规则识别为退款或售后页面，优先作为退款诉求线索参与融合。"
+      },
+      "ok": true
+    },
+    {
+      "scenario": "操作指引",
+      "image": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\howto\\howto_0001.png",
+      "text": "我不会操作，帮我一步一步说明",
+      "expected": "howto",
+      "predicted": "howto",
+      "intent_label": "不会操作",
+      "confidence": 0.9477,
+      "need_human": false,
+      "screenshot_cnn": {
+        "class_index": 3,
+        "class_name": "howto",
+        "confidence": 1.0,
+        "label": "操作引导截图",
+        "model": "demo_screenshot_intent_cnn.pt",
+        "probabilities": {
+          "fault": 0.0,
+          "howto": 1.0,
+          "normal": 0.0,
+          "order": 0.0,
+          "refund": 0.0
+        },
+        "source": "pytorch_cnn",
+        "summary": "截图 CNN/规则识别为帮助文档或操作指引页面，优先作为不会操作线索参与融合。"
+      },
+      "ok": true
+    },
+    {
+      "scenario": "投诉",
+      "image": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\normal\\normal_0001.png",
+      "text": "客服一直不回复，服务态度太差了，我要投诉",
+      "expected": "complaint",
+      "predicted": "complaint",
+      "intent_label": "投诉",
+      "confidence": 0.9186,
+      "need_human": true,
+      "screenshot_cnn": {
+        "class_index": 4,
+        "class_name": "normal",
+        "confidence": 1.0,
+        "label": "普通客服页面截图",
+        "model": "demo_screenshot_intent_cnn.pt",
+        "probabilities": {
+          "fault": 0.0,
+          "howto": 0.0,
+          "normal": 1.0,
+          "order": 0.0,
+          "refund": 0.0
+        },
+        "source": "pytorch_cnn",
+        "summary": "截图 CNN/规则识别为普通客服相关页面，作为一般咨询线索参与融合。"
+      },
+      "ok": true
+    }
+  ],
+  "note": "Uploads the recommended demo screenshots to Flask /api/predict and checks final fused intent."
+}

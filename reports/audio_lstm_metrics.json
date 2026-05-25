@@ -1,0 +1,75 @@
+{
+  "model": "MFCC + LSTM",
+  "task": "LibriSpeech acoustic speaker-proxy classification",
+  "note": "LibriSpeech has speech/transcript data but no customer-service intent labels; this trains the requested LSTM acoustic branch.",
+  "subset": "dev-clean",
+  "samples": 728,
+  "epochs": 20,
+  "hidden_size": 128,
+  "num_layers": 2,
+  "learning_rate": 0.0008,
+  "accuracy": 0.9795,
+  "classification_report": {
+    "1462": {
+      "precision": 0.9047619047619048,
+      "recall": 1.0,
+      "f1-score": 0.95,
+      "support": 19.0
+    },
+    "2277": {
+      "precision": 1.0,
+      "recall": 0.9473684210526315,
+      "f1-score": 0.972972972972973,
+      "support": 19.0
+    },
+    "2428": {
+      "precision": 1.0,
+      "recall": 0.9444444444444444,
+      "f1-score": 0.9714285714285714,
+      "support": 18.0
+    },
+    "3081": {
+      "precision": 0.9473684210526315,
+      "recall": 1.0,
+      "f1-score": 0.972972972972973,
+      "support": 18.0
+    },
+    "3752": {
+      "precision": 1.0,
+      "recall": 0.95,
+      "f1-score": 0.9743589743589743,
+      "support": 20.0
+    },
+    "5694": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 17.0
+    },
+    "6313": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 19.0
+    },
+    "777": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 16.0
+    },
+    "accuracy": 0.9794520547945206,
+    "macro avg": {
+      "precision": 0.981516290726817,
+      "recall": 0.9802266081871345,
+      "f1-score": 0.9802166864666865,
+      "support": 146.0
+    },
+    "weighted avg": {
+      "precision": 0.981117176502901,
+      "recall": 0.9794520547945206,
+      "f1-score": 0.9796088614581766,
+      "support": 146.0
+    }
+  }
+}

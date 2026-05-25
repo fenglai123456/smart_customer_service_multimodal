@@ -1,0 +1,41 @@
+{
+  "model": "MFCC statistics + SVM",
+  "task": "LibriSpeech acoustic speaker-proxy classification",
+  "note": "Used as the stable single-modality audio branch metric; LSTM script is also provided separately.",
+  "subset": "dev-clean",
+  "samples": 291,
+  "accuracy": 1.0,
+  "classification_report": {
+    "2277": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 19.0
+    },
+    "3752": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 20.0
+    },
+    "6313": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 20.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 59.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 59.0
+    }
+  }
+}

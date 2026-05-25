@@ -1,0 +1,59 @@
+{
+  "model": "bert-base-chinese",
+  "task": "BERT text intent classification",
+  "mode": "full",
+  "data": "strict_squad_plus_abcd",
+  "strict_sources": true,
+  "source_contract": "SQuAD v2.0 + ABCD public customer-dialogue subset",
+  "train_size": 8094,
+  "test_size": 3148,
+  "epochs": 3,
+  "freeze_encoder": false,
+  "learning_rate": 2e-05,
+  "accuracy": 0.946,
+  "classification_report": {
+    "complaint": {
+      "precision": 0.9238683127572016,
+      "recall": 0.9107505070993914,
+      "f1-score": 0.9172625127681308,
+      "support": 493.0
+    },
+    "consult": {
+      "precision": 0.9324804548685146,
+      "recall": 0.9754646840148699,
+      "f1-score": 0.9534883720930233,
+      "support": 1345.0
+    },
+    "howto": {
+      "precision": 0.9819819819819819,
+      "recall": 0.8919803600654664,
+      "f1-score": 0.934819897084048,
+      "support": 611.0
+    },
+    "refund": {
+      "precision": 0.9360189573459715,
+      "recall": 0.9587378640776699,
+      "f1-score": 0.947242206235012,
+      "support": 412.0
+    },
+    "repair": {
+      "precision": 0.9964028776978417,
+      "recall": 0.9651567944250871,
+      "f1-score": 0.9805309734513274,
+      "support": 287.0
+    },
+    "accuracy": 0.945997458703939,
+    "macro avg": {
+      "precision": 0.9541505169303022,
+      "recall": 0.9404180419364969,
+      "f1-score": 0.9466687923263084,
+      "support": 3148.0
+    },
+    "weighted avg": {
+      "precision": 0.9470304057510369,
+      "recall": 0.945997458703939,
+      "f1-score": 0.9458397124293245,
+      "support": 3148.0
+    }
+  }
+}

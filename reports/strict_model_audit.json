@@ -1,0 +1,766 @@
+{
+  "target_accuracy": 0.82,
+  "strict_model_ready": false,
+  "modules": {
+    "text": {
+      "ready": true,
+      "accuracy": 0.946,
+      "samples": 11242,
+      "task": "BERT text intent classification",
+      "strict_sources": true,
+      "note": "Requires bert-base-chinese trained on strict SQuAD + ABCD data.",
+      "report": {
+        "model": "bert-base-chinese",
+        "task": "BERT text intent classification",
+        "mode": "full",
+        "data": "strict_squad_plus_abcd",
+        "strict_sources": true,
+        "source_contract": "SQuAD v2.0 + ABCD public customer-dialogue subset",
+        "train_size": 8094,
+        "test_size": 3148,
+        "epochs": 3,
+        "freeze_encoder": false,
+        "learning_rate": 2e-05,
+        "accuracy": 0.946,
+        "classification_report": {
+          "complaint": {
+            "precision": 0.9238683127572016,
+            "recall": 0.9107505070993914,
+            "f1-score": 0.9172625127681308,
+            "support": 493.0
+          },
+          "consult": {
+            "precision": 0.9324804548685146,
+            "recall": 0.9754646840148699,
+            "f1-score": 0.9534883720930233,
+            "support": 1345.0
+          },
+          "howto": {
+            "precision": 0.9819819819819819,
+            "recall": 0.8919803600654664,
+            "f1-score": 0.934819897084048,
+            "support": 611.0
+          },
+          "refund": {
+            "precision": 0.9360189573459715,
+            "recall": 0.9587378640776699,
+            "f1-score": 0.947242206235012,
+            "support": 412.0
+          },
+          "repair": {
+            "precision": 0.9964028776978417,
+            "recall": 0.9651567944250871,
+            "f1-score": 0.9805309734513274,
+            "support": 287.0
+          },
+          "accuracy": 0.945997458703939,
+          "macro avg": {
+            "precision": 0.9541505169303022,
+            "recall": 0.9404180419364969,
+            "f1-score": 0.9466687923263084,
+            "support": 3148.0
+          },
+          "weighted avg": {
+            "precision": 0.9470304057510369,
+            "recall": 0.945997458703939,
+            "f1-score": 0.9458397124293245,
+            "support": 3148.0
+          }
+        }
+      }
+    },
+    "audio": {
+      "ready": true,
+      "accuracy": 0.9795,
+      "samples": 728,
+      "task": "LibriSpeech acoustic speaker-proxy classification",
+      "strict_sources": null,
+      "note": "LibriSpeech has no customer-service intent labels; this can only validate the requested LSTM speech branch.",
+      "report": {
+        "model": "MFCC + LSTM",
+        "task": "LibriSpeech acoustic speaker-proxy classification",
+        "note": "LibriSpeech has speech/transcript data but no customer-service intent labels; this trains the requested LSTM acoustic branch.",
+        "subset": "dev-clean",
+        "samples": 728,
+        "epochs": 20,
+        "hidden_size": 128,
+        "num_layers": 2,
+        "learning_rate": 0.0008,
+        "accuracy": 0.9795,
+        "classification_report": {
+          "1462": {
+            "precision": 0.9047619047619048,
+            "recall": 1.0,
+            "f1-score": 0.95,
+            "support": 19.0
+          },
+          "2277": {
+            "precision": 1.0,
+            "recall": 0.9473684210526315,
+            "f1-score": 0.972972972972973,
+            "support": 19.0
+          },
+          "2428": {
+            "precision": 1.0,
+            "recall": 0.9444444444444444,
+            "f1-score": 0.9714285714285714,
+            "support": 18.0
+          },
+          "3081": {
+            "precision": 0.9473684210526315,
+            "recall": 1.0,
+            "f1-score": 0.972972972972973,
+            "support": 18.0
+          },
+          "3752": {
+            "precision": 1.0,
+            "recall": 0.95,
+            "f1-score": 0.9743589743589743,
+            "support": 20.0
+          },
+          "5694": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 17.0
+          },
+          "6313": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 19.0
+          },
+          "777": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 16.0
+          },
+          "accuracy": 0.9794520547945206,
+          "macro avg": {
+            "precision": 0.981516290726817,
+            "recall": 0.9802266081871345,
+            "f1-score": 0.9802166864666865,
+            "support": 146.0
+          },
+          "weighted avg": {
+            "precision": 0.981117176502901,
+            "recall": 0.9794520547945206,
+            "f1-score": 0.9796088614581766,
+            "support": 146.0
+          }
+        }
+      }
+    },
+    "emotion": {
+      "ready": true,
+      "accuracy": 0.8459,
+      "samples": 35887,
+      "task": "FER-2013 angry-vs-other CNN classification",
+      "strict_sources": null,
+      "note": "Binary angry-vs-other CNN uses a tuned decision threshold saved in the checkpoint.",
+      "report": {
+        "model": "2-layer CNN",
+        "task": "FER-2013 angry-vs-other CNN classification",
+        "mode": "full",
+        "samples": 35887,
+        "epochs": 24,
+        "learning_rate": 0.0006,
+        "binary_angry": true,
+        "class_weight": true,
+        "architecture": "enhanced_cnn_v2",
+        "num_classes": 2,
+        "accuracy": 0.8508,
+        "classification_report": {
+          "0": {
+            "precision": 0.9177008491182234,
+            "recall": 0.9083562308065298,
+            "f1-score": 0.913004630005686,
+            "support": 6187.0
+          },
+          "1": {
+            "precision": 0.4620493358633776,
+            "recall": 0.49142280524722504,
+            "f1-score": 0.4762836185819071,
+            "support": 991.0
+          },
+          "accuracy": 0.8507940930621343,
+          "macro avg": {
+            "precision": 0.6898750924908005,
+            "recall": 0.6998895180268774,
+            "f1-score": 0.6946441242937965,
+            "support": 7178.0
+          },
+          "weighted avg": {
+            "precision": 0.8547932634905343,
+            "recall": 0.8507940930621343,
+            "f1-score": 0.8527106034912022,
+            "support": 7178.0
+          }
+        },
+        "threshold_tuning": {
+          "model": "2-layer CNN",
+          "task": "FER-2013 angry-vs-other CNN classification with tuned threshold",
+          "source_model": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\models\\fer2013_cnn.pt",
+          "samples": 35887,
+          "test_size": 7178,
+          "threshold": 0.49,
+          "baseline_threshold": 0.5,
+          "baseline_accuracy": 0.8508,
+          "accuracy": 0.8459,
+          "angry_precision": 0.4482,
+          "angry_recall": 0.5015,
+          "classification_report": {
+            "0": {
+              "precision": 0.9186027352117317,
+              "recall": 0.901082915791175,
+              "f1-score": 0.9097584856396866,
+              "support": 6187.0
+            },
+            "1": {
+              "precision": 0.44815148782687103,
+              "recall": 0.5015136226034309,
+              "f1-score": 0.47333333333333333,
+              "support": 991.0
+            },
+            "accuracy": 0.8459180830314851,
+            "macro avg": {
+              "precision": 0.6833771115193014,
+              "recall": 0.701298269197303,
+              "f1-score": 0.69154590948651,
+              "support": 7178.0
+            },
+            "weighted avg": {
+              "precision": 0.8536518873211776,
+              "recall": 0.8459180830314851,
+              "f1-score": 0.8495053056542317,
+              "support": 7178.0
+            }
+          }
+        }
+      },
+      "threshold": 0.49,
+      "angry_recall": 0.5015
+    },
+    "coco_image": {
+      "ready": true,
+      "accuracy": 0.8562,
+      "samples": 1500,
+      "task": "COCO top-category image classification",
+      "strict_sources": null,
+      "note": "COCO CNN is a required image branch, but it does not replace customer screenshot intent recognition.",
+      "report": {
+        "model": "ImageNet-pretrained ResNet18 transfer",
+        "task": "COCO top-category image classification",
+        "samples": 1500,
+        "top_k": 3,
+        "epochs": 12,
+        "learning_rate": 0.001,
+        "training_unit": "object_crop",
+        "min_bbox_area": 1024.0,
+        "architecture": "resnet18_transfer",
+        "freeze_backbone": true,
+        "image_size": 224,
+        "split": {
+          "strategy": "per-label image-group holdout",
+          "group_by_image": true,
+          "labels": {
+            "car": {
+              "train_groups": 191,
+              "test_groups": 47,
+              "train_images": 399,
+              "test_images": 101
+            },
+            "chair": {
+              "train_groups": 185,
+              "test_groups": 47,
+              "train_images": 400,
+              "test_images": 100
+            },
+            "person": {
+              "train_groups": 143,
+              "test_groups": 37,
+              "train_images": 395,
+              "test_images": 105
+            }
+          },
+          "train_label_counts": {
+            "car": 399,
+            "chair": 400,
+            "person": 395
+          },
+          "test_label_counts": {
+            "car": 101,
+            "chair": 100,
+            "person": 105
+          }
+        },
+        "accuracy": 0.8562,
+        "classification_report": {
+          "car": {
+            "precision": 0.9263157894736842,
+            "recall": 0.8712871287128713,
+            "f1-score": 0.8979591836734694,
+            "support": 101.0
+          },
+          "chair": {
+            "precision": 0.8163265306122449,
+            "recall": 0.8,
+            "f1-score": 0.8080808080808081,
+            "support": 100.0
+          },
+          "person": {
+            "precision": 0.831858407079646,
+            "recall": 0.8952380952380953,
+            "f1-score": 0.8623853211009175,
+            "support": 105.0
+          },
+          "accuracy": 0.8562091503267973,
+          "macro avg": {
+            "precision": 0.8581669090551918,
+            "recall": 0.8555084079836556,
+            "f1-score": 0.8561417709517317,
+            "support": 306.0
+          },
+          "weighted avg": {
+            "precision": 0.8579597403314687,
+            "recall": 0.8562091503267973,
+            "f1-score": 0.8563804479565279,
+            "support": 306.0
+          }
+        }
+      }
+    },
+    "screenshot_intent": {
+      "ready": false,
+      "accuracy": 0.4701,
+      "samples": 661,
+      "task": "five-class customer-service screenshot intent classification",
+      "strict_sources": true,
+      "note": "Uses grouped evaluation by public page/source id; this is the honest metric for screenshot intent generalization.",
+      "report": {
+        "model": "ScreenshotIntentCNN",
+        "task": "five-class customer-service screenshot intent classification",
+        "strict_sources": true,
+        "source_contract": "customer screenshot public subset; COCO branch is trained separately by scripts/train_image_cnn.py",
+        "source_note": "Evaluation is grouped by public page/source id so viewport variants of the same page do not appear in both train and test.",
+        "filters": {
+          "source_kinds": [
+            "embedded_asset",
+            "seed",
+            "webpage_viewport"
+          ],
+          "min_edge_score": 12.0,
+          "min_contrast": 25.0
+        },
+        "split_strategy": "source_group",
+        "labels": [
+          "fault",
+          "order",
+          "refund",
+          "howto",
+          "normal"
+        ],
+        "samples": 661,
+        "label_counts": {
+          "fault": 115,
+          "howto": 127,
+          "normal": 184,
+          "order": 130,
+          "refund": 105
+        },
+        "train_size": 544,
+        "test_size": 117,
+        "split": {
+          "strategy": "per-label source-group holdout",
+          "labels": {
+            "fault": {
+              "train_groups": [
+                "public_source_001",
+                "public_source_002",
+                "public_source_003",
+                "public_source_004",
+                "public_source_005",
+                "public_source_026",
+                "public_source_027",
+                "public_source_028",
+                "public_source_029",
+                "public_source_051",
+                "public_source_052",
+                "public_source_054",
+                "public_source_055",
+                "public_source_056",
+                "public_source_058",
+                "public_source_059",
+                "public_source_101",
+                "public_source_102",
+                "public_source_103",
+                "public_source_104",
+                "public_source_105"
+              ],
+              "test_groups": [
+                "public_source_030",
+                "public_source_053",
+                "public_source_057",
+                "public_source_060",
+                "public_source_106"
+              ],
+              "train_images": 99,
+              "test_images": 16
+            },
+            "order": {
+              "train_groups": [
+                "abcd_action_example",
+                "public_source_006",
+                "public_source_008",
+                "public_source_009",
+                "public_source_010",
+                "public_source_031",
+                "public_source_033",
+                "public_source_034",
+                "public_source_035",
+                "public_source_061",
+                "public_source_063",
+                "public_source_064",
+                "public_source_065",
+                "public_source_066",
+                "public_source_067",
+                "public_source_068",
+                "public_source_070",
+                "public_source_108",
+                "public_source_109",
+                "public_source_110",
+                "public_source_111",
+                "public_source_112"
+              ],
+              "test_groups": [
+                "public_source_007",
+                "public_source_032",
+                "public_source_062",
+                "public_source_069",
+                "public_source_107"
+              ],
+              "train_images": 108,
+              "test_images": 22
+            },
+            "refund": {
+              "train_groups": [
+                "public_source_011",
+                "public_source_012",
+                "public_source_013",
+                "public_source_015",
+                "public_source_036",
+                "public_source_038",
+                "public_source_039",
+                "public_source_071",
+                "public_source_073",
+                "public_source_074",
+                "public_source_075",
+                "public_source_076",
+                "public_source_077",
+                "public_source_078",
+                "public_source_080",
+                "public_source_113",
+                "public_source_114",
+                "public_source_115",
+                "public_source_116",
+                "public_source_119"
+              ],
+              "test_groups": [
+                "abcd_agent_dashboard",
+                "public_source_040",
+                "public_source_072",
+                "public_source_117",
+                "public_source_118"
+              ],
+              "train_images": 88,
+              "test_images": 17
+            },
+            "howto": {
+              "train_groups": [
+                "abcd_faq_screenshot",
+                "public_source_016",
+                "public_source_017",
+                "public_source_018",
+                "public_source_019",
+                "public_source_020",
+                "public_source_041",
+                "public_source_042",
+                "public_source_043",
+                "public_source_045",
+                "public_source_084",
+                "public_source_085",
+                "public_source_086",
+                "public_source_087",
+                "public_source_088",
+                "public_source_090",
+                "public_source_120",
+                "public_source_121",
+                "public_source_123",
+                "public_source_124"
+              ],
+              "test_groups": [
+                "public_source_044",
+                "public_source_081",
+                "public_source_082",
+                "public_source_083",
+                "public_source_089"
+              ],
+              "train_images": 95,
+              "test_images": 32
+            },
+            "normal": {
+              "train_groups": [
+                "public_source_022",
+                "public_source_023",
+                "public_source_024",
+                "public_source_046",
+                "public_source_049",
+                "public_source_091",
+                "public_source_092",
+                "public_source_093",
+                "public_source_094",
+                "public_source_095",
+                "public_source_096",
+                "public_source_097",
+                "public_source_098",
+                "public_source_099",
+                "public_source_100",
+                "public_source_125",
+                "public_source_126",
+                "public_source_127"
+              ],
+              "test_groups": [
+                "abcd_customer_site",
+                "public_source_021",
+                "public_source_025",
+                "public_source_047"
+              ],
+              "train_images": 154,
+              "test_images": 30
+            }
+          }
+        },
+        "epochs": 12,
+        "epochs_ran": 9,
+        "best_epoch": 4,
+        "best_accuracy": 0.4701,
+        "history": [
+          {
+            "epoch": 1,
+            "loss": 1.563533,
+            "accuracy": 0.410256
+          },
+          {
+            "epoch": 2,
+            "loss": 1.41033,
+            "accuracy": 0.384615
+          },
+          {
+            "epoch": 3,
+            "loss": 1.339182,
+            "accuracy": 0.42735
+          },
+          {
+            "epoch": 4,
+            "loss": 1.299102,
+            "accuracy": 0.470085
+          },
+          {
+            "epoch": 5,
+            "loss": 1.19941,
+            "accuracy": 0.34188
+          },
+          {
+            "epoch": 6,
+            "loss": 1.163196,
+            "accuracy": 0.358974
+          },
+          {
+            "epoch": 7,
+            "loss": 1.149735,
+            "accuracy": 0.384615
+          },
+          {
+            "epoch": 8,
+            "loss": 1.164609,
+            "accuracy": 0.367521
+          },
+          {
+            "epoch": 9,
+            "loss": 1.132005,
+            "accuracy": 0.384615
+          }
+        ],
+        "image_size": 224,
+        "learning_rate": 0.001,
+        "class_weight": false,
+        "mirror_aug": false,
+        "architecture": "resnet18_transfer",
+        "freeze_backbone": true,
+        "pretrained": true,
+        "device": "cuda",
+        "accuracy": 0.4701,
+        "classification_report": {
+          "fault": {
+            "precision": 0.2,
+            "recall": 0.3125,
+            "f1-score": 0.24390243902439024,
+            "support": 16.0
+          },
+          "order": {
+            "precision": 0.4444444444444444,
+            "recall": 0.18181818181818182,
+            "f1-score": 0.25806451612903225,
+            "support": 22.0
+          },
+          "refund": {
+            "precision": 0.14285714285714285,
+            "recall": 0.058823529411764705,
+            "f1-score": 0.08333333333333333,
+            "support": 17.0
+          },
+          "howto": {
+            "precision": 0.43478260869565216,
+            "recall": 0.625,
+            "f1-score": 0.5128205128205128,
+            "support": 32.0
+          },
+          "normal": {
+            "precision": 0.8333333333333334,
+            "recall": 0.8333333333333334,
+            "f1-score": 0.8333333333333334,
+            "support": 30.0
+          },
+          "accuracy": 0.4700854700854701,
+          "macro avg": {
+            "precision": 0.41108350586611453,
+            "recall": 0.402295008912656,
+            "f1-score": 0.38629082692812045,
+            "support": 117.0
+          },
+          "weighted avg": {
+            "precision": 0.46426831354367587,
+            "recall": 0.4700854700854701,
+            "f1-score": 0.44792120902694044,
+            "support": 117.0
+          }
+        },
+        "confusion_matrix": {
+          "labels": [
+            "fault",
+            "order",
+            "refund",
+            "howto",
+            "normal"
+          ],
+          "matrix": [
+            [
+              5,
+              2,
+              0,
+              9,
+              0
+            ],
+            [
+              5,
+              4,
+              3,
+              10,
+              0
+            ],
+            [
+              9,
+              3,
+              1,
+              3,
+              1
+            ],
+            [
+              6,
+              0,
+              2,
+              20,
+              4
+            ],
+            [
+              0,
+              0,
+              1,
+              4,
+              25
+            ]
+          ]
+        }
+      },
+      "final_accuracy": 0.4701,
+      "best_epoch": 4
+    },
+    "fusion": {
+      "ready": false,
+      "accuracy": 1.0,
+      "samples": 10,
+      "task": "multimodal customer-service intent fusion",
+      "strict_sources": false,
+      "note": "Strict fusion must be trained on real multimodal rows, not demo samples.",
+      "report": {
+        "model": "PyTorch fully-connected feature fusion",
+        "task": "multimodal customer-service intent fusion",
+        "strict_sources": false,
+        "data": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\data\\demo\\multimodal_samples.csv",
+        "source_contract": "demo samples",
+        "source_note": "Demo mode uses small handcrafted rows and synthetic modality scores.",
+        "samples": 10,
+        "feature_count": 26,
+        "epochs": 120,
+        "accuracy": 1.0,
+        "classification_report": {
+          "complaint": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "consult": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "howto": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "refund": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "repair": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "accuracy": 1.0,
+          "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 5.0
+          },
+          "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 5.0
+          }
+        }
+      }
+    }
+  },
+  "report_path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\reports\\strict_model_audit.json"
+}

@@ -1,0 +1,14 @@
+{
+  "case_id": "04_howto",
+  "scenario": "操作指引",
+  "text": "我不会操作，帮我一步一步说明",
+  "voice_text": "我找不到入口，麻烦告诉我怎么设置",
+  "emotion": "neutral",
+  "screenshot_file": "howto_0001.png",
+  "emotion_image_file": "face_04_howto_nonangry_fer2013.png",
+  "audio_file": "voice_04_howto_librispeech.flac",
+  "expected_screenshot_class": "howto",
+  "expected_intent": "howto",
+  "expected_intent_label": "操作引导",
+  "note": "完整多模态演示用例：操作指引截图 + 不会操作文本。"
+}

@@ -1,0 +1,16 @@
+{
+  "ready": true,
+  "problems": [],
+  "torch": {
+    "version": "2.7.0+cu126",
+    "cuda_available": true,
+    "cuda_version": "12.6",
+    "device": "NVIDIA GeForce RTX 4060 Laptop GPU"
+  },
+  "torchvision": {
+    "version": "0.22.0+cu126"
+  },
+  "torchaudio": {
+    "version": "2.7.0+cu126"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "model": "ImageNet-pretrained ResNet18 transfer",
+  "task": "COCO top-category image classification",
+  "samples": 1500,
+  "top_k": 3,
+  "epochs": 12,
+  "learning_rate": 0.001,
+  "training_unit": "object_crop",
+  "min_bbox_area": 1024.0,
+  "architecture": "resnet18_transfer",
+  "freeze_backbone": true,
+  "image_size": 224,
+  "split": {
+    "strategy": "per-label image-group holdout",
+    "group_by_image": true,
+    "labels": {
+      "car": {
+        "train_groups": 191,
+        "test_groups": 47,
+        "train_images": 399,
+        "test_images": 101
+      },
+      "chair": {
+        "train_groups": 185,
+        "test_groups": 47,
+        "train_images": 400,
+        "test_images": 100
+      },
+      "person": {
+        "train_groups": 143,
+        "test_groups": 37,
+        "train_images": 395,
+        "test_images": 105
+      }
+    },
+    "train_label_counts": {
+      "car": 399,
+      "chair": 400,
+      "person": 395
+    },
+    "test_label_counts": {
+      "car": 101,
+      "chair": 100,
+      "person": 105
+    }
+  },
+  "accuracy": 0.8562,
+  "classification_report": {
+    "car": {
+      "precision": 0.9263157894736842,
+      "recall": 0.8712871287128713,
+      "f1-score": 0.8979591836734694,
+      "support": 101.0
+    },
+    "chair": {
+      "precision": 0.8163265306122449,
+      "recall": 0.8,
+      "f1-score": 0.8080808080808081,
+      "support": 100.0
+    },
+    "person": {
+      "precision": 0.831858407079646,
+      "recall": 0.8952380952380953,
+      "f1-score": 0.8623853211009175,
+      "support": 105.0
+    },
+    "accuracy": 0.8562091503267973,
+    "macro avg": {
+      "precision": 0.8581669090551918,
+      "recall": 0.8555084079836556,
+      "f1-score": 0.8561417709517317,
+      "support": 306.0
+    },
+    "weighted avg": {
+      "precision": 0.8579597403314687,
+      "recall": 0.8562091503267973,
+      "f1-score": 0.8563804479565279,
+      "support": 306.0
+    }
+  }
+}

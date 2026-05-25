@@ -1,0 +1,11 @@
+﻿text,voice_text,emotion,image_signal,label
+订单物流一直没有更新,帮我查一下,neutral,normal,consult
+服务太差我要投诉,我很生气,angry,normal,complaint
+我要申请退款,订单已经取消,sad,normal,refund
+支付页面报错,截图里有错误提示,anxious,error_screenshot,repair
+我不会修改地址,能教一下吗,neutral,normal,howto
+系统一直闪退,很着急,anxious,error_screenshot,repair
+客服没人理我,要求人工,angry,normal,complaint
+钱什么时候退回,退款不到账,sad,normal,refund
+这个套餐多少钱,咨询活动,happy,normal,consult
+找不到售后入口,不会操作,neutral,low_info,howto

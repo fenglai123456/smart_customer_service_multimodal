@@ -1,0 +1,14 @@
+{
+  "case_id": "01_fault_repair",
+  "scenario": "故障报修",
+  "text": "页面一直报错，支付失败，帮我报修",
+  "voice_text": "我现在有点着急，页面一直支付失败，麻烦尽快帮我处理",
+  "emotion": "anxious",
+  "screenshot_file": "fault_0001.png",
+  "emotion_image_file": "face_01_fault_nonangry_fer2013.png",
+  "audio_file": "voice_01_fault_librispeech.flac",
+  "expected_screenshot_class": "fault",
+  "expected_intent": "repair",
+  "expected_intent_label": "故障报修",
+  "note": "完整多模态演示用例：故障截图 + 焦虑情绪 + 负向语音转写。"
+}

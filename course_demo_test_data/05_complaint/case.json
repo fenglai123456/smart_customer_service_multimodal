@@ -1,0 +1,14 @@
+{
+  "case_id": "05_complaint",
+  "scenario": "投诉",
+  "text": "客服一直不回复，服务态度太差了，我要投诉",
+  "voice_text": "我等了很久没人处理，要求人工升级处理",
+  "emotion": "angry",
+  "screenshot_file": "normal_0001.png",
+  "emotion_image_file": "face_05_complaint_angry_fer2013.png",
+  "audio_file": "voice_05_complaint_librispeech.flac",
+  "expected_screenshot_class": "normal",
+  "expected_intent": "complaint",
+  "expected_intent_label": "投诉",
+  "note": "完整多模态演示用例：普通客服页面截图 + 愤怒表情 + 投诉文本，覆盖投诉识别与转人工场景。"
+}

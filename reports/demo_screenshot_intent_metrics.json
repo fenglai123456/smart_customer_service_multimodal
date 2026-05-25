@@ -1,0 +1,219 @@
+{
+  "model": "DemoScreenshotCNN",
+  "task": "demo-only five-class customer screenshot intent classification",
+  "strict_sources": false,
+  "usage": "course_demo_only",
+  "labels": [
+    "fault",
+    "order",
+    "refund",
+    "howto",
+    "normal"
+  ],
+  "train_size": 800,
+  "test_size": 60,
+  "label_counts": {
+    "train": {
+      "fault": 160,
+      "howto": 160,
+      "normal": 160,
+      "order": 160,
+      "refund": 160
+    },
+    "test": {
+      "fault": 12,
+      "howto": 12,
+      "normal": 12,
+      "order": 12,
+      "refund": 12
+    }
+  },
+  "epochs": 18,
+  "image_size": 160,
+  "device": "cuda",
+  "accuracy": 1.0,
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.598518,
+      "accuracy": 0.2
+    },
+    {
+      "epoch": 2,
+      "loss": 0.00491,
+      "accuracy": 0.2
+    },
+    {
+      "epoch": 3,
+      "loss": 0.000454,
+      "accuracy": 0.6
+    },
+    {
+      "epoch": 4,
+      "loss": 0.000175,
+      "accuracy": 1.0
+    },
+    {
+      "epoch": 5,
+      "loss": 8.7e-05,
+      "accuracy": 1.0
+    },
+    {
+      "epoch": 6,
+      "loss": 7.4e-05,
+      "accuracy": 1.0
+    },
+    {
+      "epoch": 7,
+      "loss": 5.9e-05,
+      "accuracy": 1.0
+    },
+    {
+      "epoch": 8,
+      "loss": 4.6e-05,
+      "accuracy": 1.0
+    },
+    {
+      "epoch": 9,
+      "loss": 3.8e-05,
+      "accuracy": 1.0
+    },
+    {
+      "epoch": 10,
+      "loss": 4.4e-05,
+      "accuracy": 1.0
+    },
+    {
+      "epoch": 11,
+      "loss": 4.3e-05,
+      "accuracy": 1.0
+    },
+    {
+      "epoch": 12,
+      "loss": 3.2e-05,
+      "accuracy": 1.0
+    },
+    {
+      "epoch": 13,
+      "loss": 2.4e-05,
+      "accuracy": 1.0
+    },
+    {
+      "epoch": 14,
+      "loss": 2.6e-05,
+      "accuracy": 1.0
+    },
+    {
+      "epoch": 15,
+      "loss": 2.3e-05,
+      "accuracy": 1.0
+    },
+    {
+      "epoch": 16,
+      "loss": 2e-05,
+      "accuracy": 1.0
+    },
+    {
+      "epoch": 17,
+      "loss": 1.7e-05,
+      "accuracy": 1.0
+    },
+    {
+      "epoch": 18,
+      "loss": 1.7e-05,
+      "accuracy": 1.0
+    }
+  ],
+  "classification_report": {
+    "fault": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 12.0
+    },
+    "order": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 12.0
+    },
+    "refund": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 12.0
+    },
+    "howto": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 12.0
+    },
+    "normal": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 12.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 60.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 60.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "fault",
+      "order",
+      "refund",
+      "howto",
+      "normal"
+    ],
+    "matrix": [
+      [
+        12,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        12,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        12,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        12,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        12
+      ]
+    ]
+  },
+  "note": "Demo model is intentionally separate from strict public-data model and must not be used as strict compliance evidence."
+}

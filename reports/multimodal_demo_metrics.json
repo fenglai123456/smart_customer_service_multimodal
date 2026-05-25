@@ -1,0 +1,153 @@
+{
+  "model": "Rule-weighted feature-level fusion demo",
+  "data": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\data\\demo\\multimodal_samples.csv",
+  "sample_size": 10,
+  "accuracy": 1.0,
+  "classification_report": {
+    "complaint": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "consult": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "howto": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "refund": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "repair": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 10.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 10.0
+    }
+  },
+  "predictions": [
+    {
+      "text": "订单物流一直没有更新",
+      "voice_text": "帮我查一下",
+      "emotion": "neutral",
+      "image_signal": "normal",
+      "label": "consult",
+      "pred": "consult",
+      "confidence": 0.426,
+      "need_human": false
+    },
+    {
+      "text": "服务太差我要投诉",
+      "voice_text": "我很生气",
+      "emotion": "angry",
+      "image_signal": "normal",
+      "label": "complaint",
+      "pred": "complaint",
+      "confidence": 0.4619,
+      "need_human": true
+    },
+    {
+      "text": "我要申请退款",
+      "voice_text": "订单已经取消",
+      "emotion": "sad",
+      "image_signal": "normal",
+      "label": "refund",
+      "pred": "refund",
+      "confidence": 0.4396,
+      "need_human": false
+    },
+    {
+      "text": "支付页面报错",
+      "voice_text": "截图里有错误提示",
+      "emotion": "anxious",
+      "image_signal": "error_screenshot",
+      "label": "repair",
+      "pred": "repair",
+      "confidence": 0.4655,
+      "need_human": false
+    },
+    {
+      "text": "我不会修改地址",
+      "voice_text": "能教一下吗",
+      "emotion": "neutral",
+      "image_signal": "normal",
+      "label": "howto",
+      "pred": "howto",
+      "confidence": 0.4221,
+      "need_human": false
+    },
+    {
+      "text": "系统一直闪退",
+      "voice_text": "很着急",
+      "emotion": "anxious",
+      "image_signal": "error_screenshot",
+      "label": "repair",
+      "pred": "repair",
+      "confidence": 0.4487,
+      "need_human": false
+    },
+    {
+      "text": "客服没人理我",
+      "voice_text": "要求人工",
+      "emotion": "angry",
+      "image_signal": "normal",
+      "label": "complaint",
+      "pred": "complaint",
+      "confidence": 0.4251,
+      "need_human": true
+    },
+    {
+      "text": "钱什么时候退回",
+      "voice_text": "退款不到账",
+      "emotion": "sad",
+      "image_signal": "normal",
+      "label": "refund",
+      "pred": "refund",
+      "confidence": 0.3419,
+      "need_human": true
+    },
+    {
+      "text": "这个套餐多少钱",
+      "voice_text": "咨询活动",
+      "emotion": "happy",
+      "image_signal": "normal",
+      "label": "consult",
+      "pred": "consult",
+      "confidence": 0.3569,
+      "need_human": true
+    },
+    {
+      "text": "找不到售后入口",
+      "voice_text": "不会操作",
+      "emotion": "neutral",
+      "image_signal": "low_info",
+      "label": "howto",
+      "pred": "howto",
+      "confidence": 0.4013,
+      "need_human": true
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "model": "raw pixels + MLP",
+  "task": "FER-2013 negative-vs-other customer emotion classification",
+  "mode": "sampled",
+  "samples": 24000,
+  "accuracy": 0.6556,
+  "classification_report": {
+    "0": {
+      "precision": 0.6835084882780922,
+      "recall": 0.6602889496290512,
+      "f1-score": 0.6716981132075471,
+      "support": 2561.0
+    },
+    "1": {
+      "precision": 0.6259673258813414,
+      "recall": 0.6502903081732917,
+      "f1-score": 0.6378970427163199,
+      "support": 2239.0
+    },
+    "accuracy": 0.655625,
+    "macro avg": {
+      "precision": 0.6547379070797168,
+      "recall": 0.6552896289011714,
+      "f1-score": 0.6547975779619335,
+      "support": 4800.0
+    },
+    "weighted avg": {
+      "precision": 0.6566679335684411,
+      "recall": 0.655625,
+      "f1-score": 0.6559313222013268,
+      "support": 4800.0
+    }
+  }
+}

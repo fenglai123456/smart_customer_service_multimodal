@@ -1,0 +1,98 @@
+{
+  "task": "course demo full multimodal upload verification",
+  "status_code": 200,
+  "expected_intent": "repair",
+  "predicted_intent": "repair",
+  "intent_label": "故障报修",
+  "confidence": 0.9078,
+  "need_human": false,
+  "audio": {
+    "confidence": 0.5946,
+    "details": {
+      "duration_sec": 5.86,
+      "fallback": null,
+      "filename": "1156c02aefbc4edea8ea71ae1eceaa66.flac",
+      "lstm": {
+        "confidence": 0.5946,
+        "label": "3752",
+        "model": "librispeech_lstm.pt",
+        "probabilities": {
+          "1462": 0.134,
+          "2277": 0.0044,
+          "2428": 0.0087,
+          "3081": 0.0734,
+          "3752": 0.5946,
+          "5694": 0.0515,
+          "6313": 0.0312,
+          "777": 0.1022
+        }
+      },
+      "model": "librispeech_lstm.pt",
+      "rms": 0.05234,
+      "sample_rate": 16000,
+      "source": "librispeech_lstm",
+      "spectral_centroid": 2305.63,
+      "zero_crossing_rate": 0.17254
+    },
+    "intent_scores": {
+      "complaint": 0.227854,
+      "consult": 0.220613,
+      "howto": 0.157581,
+      "refund": 0.157581,
+      "repair": 0.236371
+    },
+    "label": "LSTM 声学类别 3752",
+    "summary": "已调用 LibriSpeech LSTM 语音分支。音量有效，可参与声学分支分析。"
+  },
+  "emotion_image": {
+    "confidence": 0.8761,
+    "details": {
+      "cnn": {
+        "class_index": 1,
+        "confidence": 0.8761,
+        "decision_threshold": 0.49,
+        "emotion": "angry",
+        "label": "愤怒",
+        "model": "fer2013_cnn.pt",
+        "probabilities": {
+          "0": 0.1239,
+          "1": 0.8761
+        }
+      },
+      "fallback": null,
+      "filename": "efc13cd1823848c7acd35776079039e8.png",
+      "height": 192,
+      "model": "fer2013_cnn.pt",
+      "source": "fer2013_cnn",
+      "task": "fer2013_expression",
+      "width": 192
+    },
+    "emotion": "angry",
+    "intent_scores": {
+      "complaint": 0.401996,
+      "consult": 0.12264,
+      "howto": 0.12264,
+      "refund": 0.230085,
+      "repair": 0.12264
+    },
+    "label": "FER CNN 愤怒",
+    "summary": "FER-2013 CNN 模型判断用户表情为愤怒。"
+  },
+  "image_screenshot": {
+    "class_index": 0,
+    "class_name": "fault",
+    "confidence": 1.0,
+    "label": "故障截图",
+    "model": "demo_screenshot_intent_cnn.pt",
+    "probabilities": {
+      "fault": 1.0,
+      "howto": 0.0,
+      "normal": 0.0,
+      "order": 0.0,
+      "refund": 0.0
+    },
+    "source": "pytorch_cnn",
+    "summary": "截图 CNN 识别为故障/异常页面，优先作为故障报修线索参与融合。"
+  },
+  "ok": true
+}

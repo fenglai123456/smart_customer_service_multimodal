@@ -1,0 +1,360 @@
+{
+  "model": "ScreenshotIntentCNN",
+  "task": "five-class customer-service screenshot intent classification",
+  "strict_sources": true,
+  "source_contract": "customer screenshot public subset; COCO branch is trained separately by scripts/train_image_cnn.py",
+  "source_note": "Evaluation is grouped by public page/source id so viewport variants of the same page do not appear in both train and test.",
+  "filters": {
+    "source_kinds": [
+      "embedded_asset",
+      "seed",
+      "webpage_viewport"
+    ],
+    "min_edge_score": 12.0,
+    "min_contrast": 25.0
+  },
+  "split_strategy": "source_group",
+  "labels": [
+    "fault",
+    "order",
+    "refund",
+    "howto",
+    "normal"
+  ],
+  "samples": 661,
+  "label_counts": {
+    "fault": 115,
+    "howto": 127,
+    "normal": 184,
+    "order": 130,
+    "refund": 105
+  },
+  "train_size": 544,
+  "test_size": 117,
+  "split": {
+    "strategy": "per-label source-group holdout",
+    "labels": {
+      "fault": {
+        "train_groups": [
+          "public_source_001",
+          "public_source_002",
+          "public_source_003",
+          "public_source_004",
+          "public_source_005",
+          "public_source_026",
+          "public_source_027",
+          "public_source_028",
+          "public_source_029",
+          "public_source_051",
+          "public_source_052",
+          "public_source_054",
+          "public_source_055",
+          "public_source_056",
+          "public_source_058",
+          "public_source_059",
+          "public_source_101",
+          "public_source_102",
+          "public_source_103",
+          "public_source_104",
+          "public_source_105"
+        ],
+        "test_groups": [
+          "public_source_030",
+          "public_source_053",
+          "public_source_057",
+          "public_source_060",
+          "public_source_106"
+        ],
+        "train_images": 99,
+        "test_images": 16
+      },
+      "order": {
+        "train_groups": [
+          "abcd_action_example",
+          "public_source_006",
+          "public_source_008",
+          "public_source_009",
+          "public_source_010",
+          "public_source_031",
+          "public_source_033",
+          "public_source_034",
+          "public_source_035",
+          "public_source_061",
+          "public_source_063",
+          "public_source_064",
+          "public_source_065",
+          "public_source_066",
+          "public_source_067",
+          "public_source_068",
+          "public_source_070",
+          "public_source_108",
+          "public_source_109",
+          "public_source_110",
+          "public_source_111",
+          "public_source_112"
+        ],
+        "test_groups": [
+          "public_source_007",
+          "public_source_032",
+          "public_source_062",
+          "public_source_069",
+          "public_source_107"
+        ],
+        "train_images": 108,
+        "test_images": 22
+      },
+      "refund": {
+        "train_groups": [
+          "public_source_011",
+          "public_source_012",
+          "public_source_013",
+          "public_source_015",
+          "public_source_036",
+          "public_source_038",
+          "public_source_039",
+          "public_source_071",
+          "public_source_073",
+          "public_source_074",
+          "public_source_075",
+          "public_source_076",
+          "public_source_077",
+          "public_source_078",
+          "public_source_080",
+          "public_source_113",
+          "public_source_114",
+          "public_source_115",
+          "public_source_116",
+          "public_source_119"
+        ],
+        "test_groups": [
+          "abcd_agent_dashboard",
+          "public_source_040",
+          "public_source_072",
+          "public_source_117",
+          "public_source_118"
+        ],
+        "train_images": 88,
+        "test_images": 17
+      },
+      "howto": {
+        "train_groups": [
+          "abcd_faq_screenshot",
+          "public_source_016",
+          "public_source_017",
+          "public_source_018",
+          "public_source_019",
+          "public_source_020",
+          "public_source_041",
+          "public_source_042",
+          "public_source_043",
+          "public_source_045",
+          "public_source_084",
+          "public_source_085",
+          "public_source_086",
+          "public_source_087",
+          "public_source_088",
+          "public_source_090",
+          "public_source_120",
+          "public_source_121",
+          "public_source_123",
+          "public_source_124"
+        ],
+        "test_groups": [
+          "public_source_044",
+          "public_source_081",
+          "public_source_082",
+          "public_source_083",
+          "public_source_089"
+        ],
+        "train_images": 95,
+        "test_images": 32
+      },
+      "normal": {
+        "train_groups": [
+          "public_source_022",
+          "public_source_023",
+          "public_source_024",
+          "public_source_046",
+          "public_source_049",
+          "public_source_091",
+          "public_source_092",
+          "public_source_093",
+          "public_source_094",
+          "public_source_095",
+          "public_source_096",
+          "public_source_097",
+          "public_source_098",
+          "public_source_099",
+          "public_source_100",
+          "public_source_125",
+          "public_source_126",
+          "public_source_127"
+        ],
+        "test_groups": [
+          "abcd_customer_site",
+          "public_source_021",
+          "public_source_025",
+          "public_source_047"
+        ],
+        "train_images": 154,
+        "test_images": 30
+      }
+    }
+  },
+  "epochs": 16,
+  "epochs_ran": 10,
+  "best_epoch": 4,
+  "best_accuracy": 0.4274,
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.542672,
+      "accuracy": 0.401709
+    },
+    {
+      "epoch": 2,
+      "loss": 1.405793,
+      "accuracy": 0.367521
+    },
+    {
+      "epoch": 3,
+      "loss": 1.35432,
+      "accuracy": 0.393162
+    },
+    {
+      "epoch": 4,
+      "loss": 1.355704,
+      "accuracy": 0.42735
+    },
+    {
+      "epoch": 5,
+      "loss": 1.28569,
+      "accuracy": 0.384615
+    },
+    {
+      "epoch": 6,
+      "loss": 1.234709,
+      "accuracy": 0.393162
+    },
+    {
+      "epoch": 7,
+      "loss": 1.244438,
+      "accuracy": 0.376068
+    },
+    {
+      "epoch": 8,
+      "loss": 1.220421,
+      "accuracy": 0.367521
+    },
+    {
+      "epoch": 9,
+      "loss": 1.224648,
+      "accuracy": 0.358974
+    },
+    {
+      "epoch": 10,
+      "loss": 1.18403,
+      "accuracy": 0.290598
+    }
+  ],
+  "image_size": 384,
+  "learning_rate": 0.001,
+  "class_weight": false,
+  "mirror_aug": false,
+  "architecture": "resnet18_transfer",
+  "freeze_backbone": true,
+  "pretrained": true,
+  "device": "cuda",
+  "accuracy": 0.4274,
+  "classification_report": {
+    "fault": {
+      "precision": 0.5,
+      "recall": 0.0625,
+      "f1-score": 0.1111111111111111,
+      "support": 16.0
+    },
+    "order": {
+      "precision": 0.3333333333333333,
+      "recall": 0.36363636363636365,
+      "f1-score": 0.34782608695652173,
+      "support": 22.0
+    },
+    "refund": {
+      "precision": 0.28888888888888886,
+      "recall": 0.7647058823529411,
+      "f1-score": 0.41935483870967744,
+      "support": 17.0
+    },
+    "howto": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 32.0
+    },
+    "normal": {
+      "precision": 0.6222222222222222,
+      "recall": 0.9333333333333333,
+      "f1-score": 0.7466666666666667,
+      "support": 30.0
+    },
+    "accuracy": 0.42735042735042733,
+    "macro avg": {
+      "precision": 0.3488888888888889,
+      "recall": 0.4248351158645276,
+      "f1-score": 0.3249917406887954,
+      "support": 117.0
+    },
+    "weighted avg": {
+      "precision": 0.3325735992402659,
+      "recall": 0.42735042735042733,
+      "f1-score": 0.3329827687938955,
+      "support": 117.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "fault",
+      "order",
+      "refund",
+      "howto",
+      "normal"
+    ],
+    "matrix": [
+      [
+        1,
+        4,
+        8,
+        0,
+        3
+      ],
+      [
+        1,
+        8,
+        8,
+        1,
+        4
+      ],
+      [
+        0,
+        2,
+        13,
+        0,
+        2
+      ],
+      [
+        0,
+        10,
+        14,
+        0,
+        8
+      ],
+      [
+        0,
+        0,
+        2,
+        0,
+        28
+      ]
+    ]
+  }
+}

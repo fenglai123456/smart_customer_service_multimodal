@@ -1,0 +1,183 @@
+{
+  "contract": {
+    "text": "SQuAD + customer-dialogue public subset",
+    "audio": "LibriSpeech",
+    "emotion": "FER-2013",
+    "image": "COCO + customer screenshot public subset",
+    "fusion": "feature-level fusion using real multimodal cases"
+  },
+  "allowed_public_sources": [
+    "SQuAD v2.0",
+    "ABCD public customer-dialogue subset",
+    "LibriSpeech",
+    "FER-2013",
+    "COCO 2017",
+    "customer_screenshots directory only when it contains real/public/teacher-provided customer-service screenshots"
+  ],
+  "disallowed_for_strict_training": [
+    "template-generated text",
+    "synthetic customer screenshots",
+    "generic UI screenshot datasets without customer-service labels",
+    "demo multimodal samples",
+    "COCO-only image classifier as a replacement for customer screenshots"
+  ],
+  "files": {
+    "SQuAD v2.0 train": {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\text\\squad\\train-v2.0.json",
+      "exists": true
+    },
+    "SQuAD v2.0 dev": {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\text\\squad\\dev-v2.0.json",
+      "exists": true
+    },
+    "ABCD customer-dialogue source": {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\text\\customer_dialogue_public\\abcd\\data\\abcd_v1.1.json.gz",
+      "exists": true
+    },
+    "ABCD mapped five-intent CSV": {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\text\\customer_dialogue_public\\abcd_customer_intents.csv",
+      "exists": true
+    },
+    "Strict SQuAD+ABCD text CSV": {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\text\\strict_text_intents.csv",
+      "exists": true
+    },
+    "LibriSpeech dev-clean archive": {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\audio\\librispeech\\dev-clean.tar.gz",
+      "exists": true
+    },
+    "LibriSpeech train-clean-100 archive": {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\audio\\librispeech\\train-clean-100.tar.gz",
+      "exists": true
+    },
+    "LibriSpeech dev-clean extracted": {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\audio\\librispeech\\LibriSpeech\\dev-clean",
+      "exists": true
+    },
+    "LibriSpeech train-clean-100 extracted": {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\audio\\librispeech\\LibriSpeech\\train-clean-100",
+      "exists": true
+    },
+    "FER-2013 CSV": {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\emotion\\fer2013\\fer2013.csv",
+      "exists": true
+    },
+    "COCO val2017 archive": {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\images\\coco\\val2017.zip",
+      "exists": true
+    },
+    "COCO annotations archive": {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\images\\coco\\annotations_trainval2017.zip",
+      "exists": true
+    },
+    "COCO val2017 extracted": {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\images\\coco\\val2017",
+      "exists": true
+    },
+    "COCO instances_val2017": {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\images\\coco\\annotations\\instances_val2017.json",
+      "exists": true
+    }
+  },
+  "modules": {
+    "text": {
+      "required_sources": [
+        "SQuAD v2.0",
+        "ABCD public customer-dialogue subset"
+      ],
+      "ready": true,
+      "details": {
+        "exists": true,
+        "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\text\\strict_text_intents.csv",
+        "rows": 11242,
+        "label_counts": {
+          "complaint": 1759,
+          "consult": 4803,
+          "howto": 2183,
+          "refund": 1471,
+          "repair": 1026
+        },
+        "source_counts": {
+          "ABCD": 10042,
+          "SQuAD": 1200
+        },
+        "contains_required_sources": true
+      }
+    },
+    "audio": {
+      "required_sources": [
+        "LibriSpeech"
+      ],
+      "ready": true,
+      "details": "LibriSpeech does not contain customer-service intent labels; it is valid only for the requested LSTM speech branch."
+    },
+    "emotion": {
+      "required_sources": [
+        "FER-2013"
+      ],
+      "ready": true,
+      "details": {
+        "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\emotion\\fer2013\\fer2013.csv",
+        "exists": true
+      }
+    },
+    "image": {
+      "required_sources": [
+        "COCO",
+        "customer screenshot public subset"
+      ],
+      "ready": true,
+      "details": {
+        "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\images\\customer_screenshots",
+        "required_labels": [
+          "fault",
+          "order",
+          "refund",
+          "howto",
+          "normal"
+        ],
+        "min_images_per_label": 30,
+        "label_counts": {
+          "fault": 322,
+          "order": 341,
+          "refund": 356,
+          "howto": 331,
+          "normal": 398
+        },
+        "total_images": 1748,
+        "ready": true,
+        "missing_labels": [],
+        "note": "Only real/public/teacher-provided customer-service screenshots belong here."
+      }
+    },
+    "fusion": {
+      "required_sources": [
+        "real multimodal cases assembled from the strict sources above"
+      ],
+      "ready": false,
+      "details": {
+        "ready": false,
+        "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\multimodal\\customer_cases.csv",
+        "rows": 0,
+        "label_counts": {
+          "consult": 0,
+          "complaint": 0,
+          "refund": 0,
+          "repair": 0,
+          "howto": 0
+        },
+        "min_cases_per_label": 10,
+        "problems": [
+          "CSV has no real multimodal case rows.",
+          "Need at least 10 real cases per label. Current: consult=0, complaint=0, refund=0, repair=0, howto=0."
+        ],
+        "problem_count": 2,
+        "strict_note": "A valid row must represent one real/traceable customer-service case. Do not randomly pair unrelated text, audio, emotion images, and screenshots.",
+        "exists": true,
+        "note": "Rows must be real multimodal cases assembled from strict sources; demo rows do not count."
+      }
+    }
+  },
+  "strict_ready": false,
+  "report_path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\reports\\strict_dataset_audit.json"
+}

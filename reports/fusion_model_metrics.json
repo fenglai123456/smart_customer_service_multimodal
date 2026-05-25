@@ -1,0 +1,57 @@
+{
+  "model": "PyTorch fully-connected feature fusion",
+  "task": "multimodal customer-service intent fusion",
+  "strict_sources": false,
+  "data": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\data\\demo\\multimodal_samples.csv",
+  "source_contract": "demo samples",
+  "source_note": "Demo mode uses small handcrafted rows and synthetic modality scores.",
+  "samples": 10,
+  "feature_count": 26,
+  "epochs": 120,
+  "accuracy": 1.0,
+  "classification_report": {
+    "complaint": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "consult": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "howto": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "refund": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "repair": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 5.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 5.0
+    }
+  }
+}

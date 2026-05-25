@@ -1,0 +1,40 @@
+{
+  "model": "2-layer CNN",
+  "task": "FER-2013 angry-vs-other CNN classification with tuned threshold",
+  "source_model": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\models\\fer2013_cnn.pt",
+  "samples": 35887,
+  "test_size": 7178,
+  "threshold": 0.49,
+  "baseline_threshold": 0.5,
+  "baseline_accuracy": 0.8508,
+  "accuracy": 0.8459,
+  "angry_precision": 0.4482,
+  "angry_recall": 0.5015,
+  "classification_report": {
+    "0": {
+      "precision": 0.9186027352117317,
+      "recall": 0.901082915791175,
+      "f1-score": 0.9097584856396866,
+      "support": 6187.0
+    },
+    "1": {
+      "precision": 0.44815148782687103,
+      "recall": 0.5015136226034309,
+      "f1-score": 0.47333333333333333,
+      "support": 991.0
+    },
+    "accuracy": 0.8459180830314851,
+    "macro avg": {
+      "precision": 0.6833771115193014,
+      "recall": 0.701298269197303,
+      "f1-score": 0.69154590948651,
+      "support": 7178.0
+    },
+    "weighted avg": {
+      "precision": 0.8536518873211776,
+      "recall": 0.8459180830314851,
+      "f1-score": 0.8495053056542317,
+      "support": 7178.0
+    }
+  }
+}

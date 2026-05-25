@@ -1,0 +1,118 @@
+{
+  "dataset": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots",
+  "labels": [
+    "fault",
+    "order",
+    "refund",
+    "howto",
+    "normal"
+  ],
+  "train_per_label": 160,
+  "test_per_label": 12,
+  "total": 860,
+  "strict_sources": false,
+  "usage": "course_demo_only",
+  "note": "These screenshots are generated demo assets for presentation testing. They must not be counted as strict public-data compliance.",
+  "rows": [
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0001.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0002.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0003.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0004.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0005.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0006.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0007.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0008.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0009.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0010.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0011.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0012.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0013.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0014.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0015.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0016.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0017.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0018.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0019.png"
+    },
+    {
+      "split": "train",
+      "label": "fault",
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\train\\fault\\fault_0020.png"
+    }
+  ]
+}

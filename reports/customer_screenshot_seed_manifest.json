@@ -1,0 +1,13 @@
+{
+  "source": "ABCD public customer-service dataset images",
+  "source_url": "https://github.com/asappresearch/abcd",
+  "manifest": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\images\\customer_screenshots\\manifest.csv",
+  "seed_count": 4,
+  "label_counts": {
+    "howto": 1,
+    "normal": 1,
+    "order": 1,
+    "refund": 1
+  },
+  "strict_note": "These are real public customer-service dataset screenshots, but they are seed samples only. They are not enough for strict 82% image-model training."
+}

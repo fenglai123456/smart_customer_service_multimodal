@@ -1,0 +1,319 @@
+{
+  "model": "ScreenshotIntentCNN",
+  "task": "five-class customer-service screenshot intent classification",
+  "strict_sources": true,
+  "source_contract": "customer screenshot public subset; COCO branch is trained separately by scripts/train_image_cnn.py",
+  "source_note": "Evaluation is grouped by public page/source id so viewport variants of the same page do not appear in both train and test.",
+  "filters": {
+    "source_kinds": [
+      "embedded_asset",
+      "seed",
+      "webpage_viewport"
+    ],
+    "min_edge_score": 12.0,
+    "min_contrast": 25.0
+  },
+  "split_strategy": "source_group",
+  "labels": [
+    "fault",
+    "order",
+    "refund",
+    "howto",
+    "normal"
+  ],
+  "samples": 496,
+  "label_counts": {
+    "fault": 80,
+    "howto": 105,
+    "normal": 159,
+    "order": 85,
+    "refund": 67
+  },
+  "train_size": 409,
+  "test_size": 87,
+  "split": {
+    "strategy": "per-label source-group holdout",
+    "labels": {
+      "fault": {
+        "train_groups": [
+          "public_source_001",
+          "public_source_002",
+          "public_source_003",
+          "public_source_004",
+          "public_source_027",
+          "public_source_028",
+          "public_source_029",
+          "public_source_030",
+          "public_source_051",
+          "public_source_052",
+          "public_source_053",
+          "public_source_054",
+          "public_source_056",
+          "public_source_057",
+          "public_source_058",
+          "public_source_059"
+        ],
+        "test_groups": [
+          "public_source_005",
+          "public_source_026",
+          "public_source_055",
+          "public_source_060"
+        ],
+        "train_images": 67,
+        "test_images": 13
+      },
+      "order": {
+        "train_groups": [
+          "abcd_action_example",
+          "public_source_006",
+          "public_source_007",
+          "public_source_009",
+          "public_source_010",
+          "public_source_031",
+          "public_source_032",
+          "public_source_034",
+          "public_source_035",
+          "public_source_062",
+          "public_source_063",
+          "public_source_064",
+          "public_source_065",
+          "public_source_067",
+          "public_source_068",
+          "public_source_069",
+          "public_source_070"
+        ],
+        "test_groups": [
+          "public_source_008",
+          "public_source_033",
+          "public_source_061",
+          "public_source_066"
+        ],
+        "train_images": 71,
+        "test_images": 14
+      },
+      "refund": {
+        "train_groups": [
+          "abcd_agent_dashboard",
+          "public_source_011",
+          "public_source_012",
+          "public_source_013",
+          "public_source_015",
+          "public_source_038",
+          "public_source_039",
+          "public_source_040",
+          "public_source_071",
+          "public_source_073",
+          "public_source_074",
+          "public_source_075",
+          "public_source_077",
+          "public_source_078"
+        ],
+        "test_groups": [
+          "public_source_036",
+          "public_source_072",
+          "public_source_076",
+          "public_source_080"
+        ],
+        "train_images": 55,
+        "test_images": 12
+      },
+      "howto": {
+        "train_groups": [
+          "public_source_016",
+          "public_source_017",
+          "public_source_019",
+          "public_source_020",
+          "public_source_041",
+          "public_source_042",
+          "public_source_043",
+          "public_source_044",
+          "public_source_082",
+          "public_source_083",
+          "public_source_084",
+          "public_source_085",
+          "public_source_086",
+          "public_source_087",
+          "public_source_088",
+          "public_source_089",
+          "public_source_090"
+        ],
+        "test_groups": [
+          "abcd_faq_screenshot",
+          "public_source_018",
+          "public_source_045",
+          "public_source_081"
+        ],
+        "train_images": 91,
+        "test_images": 14
+      },
+      "normal": {
+        "train_groups": [
+          "abcd_customer_site",
+          "public_source_021",
+          "public_source_022",
+          "public_source_023",
+          "public_source_024",
+          "public_source_025",
+          "public_source_046",
+          "public_source_047",
+          "public_source_049",
+          "public_source_092",
+          "public_source_093",
+          "public_source_096",
+          "public_source_098",
+          "public_source_099",
+          "public_source_100"
+        ],
+        "test_groups": [
+          "public_source_091",
+          "public_source_094",
+          "public_source_095",
+          "public_source_097"
+        ],
+        "train_images": 125,
+        "test_images": 34
+      }
+    }
+  },
+  "epochs": 18,
+  "epochs_ran": 7,
+  "best_epoch": 1,
+  "best_accuracy": 0.5287,
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.601109,
+      "accuracy": 0.528736
+    },
+    {
+      "epoch": 2,
+      "loss": 1.472727,
+      "accuracy": 0.517241
+    },
+    {
+      "epoch": 3,
+      "loss": 1.368879,
+      "accuracy": 0.402299
+    },
+    {
+      "epoch": 4,
+      "loss": 1.298529,
+      "accuracy": 0.425287
+    },
+    {
+      "epoch": 5,
+      "loss": 1.324051,
+      "accuracy": 0.482759
+    },
+    {
+      "epoch": 6,
+      "loss": 1.245002,
+      "accuracy": 0.390805
+    },
+    {
+      "epoch": 7,
+      "loss": 1.203244,
+      "accuracy": 0.402299
+    }
+  ],
+  "image_size": 224,
+  "learning_rate": 0.001,
+  "class_weight": true,
+  "mirror_aug": false,
+  "architecture": "resnet18_transfer",
+  "freeze_backbone": true,
+  "pretrained": true,
+  "device": "cuda",
+  "accuracy": 0.5287,
+  "classification_report": {
+    "fault": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 13.0
+    },
+    "order": {
+      "precision": 0.3076923076923077,
+      "recall": 0.2857142857142857,
+      "f1-score": 0.2962962962962963,
+      "support": 14.0
+    },
+    "refund": {
+      "precision": 0.4,
+      "recall": 0.16666666666666666,
+      "f1-score": 0.23529411764705882,
+      "support": 12.0
+    },
+    "howto": {
+      "precision": 0.32432432432432434,
+      "recall": 0.8571428571428571,
+      "f1-score": 0.47058823529411764,
+      "support": 14.0
+    },
+    "normal": {
+      "precision": 0.9032258064516129,
+      "recall": 0.8235294117647058,
+      "f1-score": 0.8615384615384616,
+      "support": 34.0
+    },
+    "accuracy": 0.5287356321839081,
+    "macro avg": {
+      "precision": 0.38704848769364897,
+      "recall": 0.426610644257703,
+      "f1-score": 0.3727434221551869,
+      "support": 87.0
+    },
+    "weighted avg": {
+      "precision": 0.5098610375584791,
+      "recall": 0.5287356321839081,
+      "f1-score": 0.4925542591533126,
+      "support": 87.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "fault",
+      "order",
+      "refund",
+      "howto",
+      "normal"
+    ],
+    "matrix": [
+      [
+        0,
+        3,
+        0,
+        10,
+        0
+      ],
+      [
+        0,
+        4,
+        1,
+        7,
+        2
+      ],
+      [
+        0,
+        4,
+        2,
+        6,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        12,
+        1
+      ],
+      [
+        1,
+        1,
+        2,
+        2,
+        28
+      ]
+    ]
+  }
+}

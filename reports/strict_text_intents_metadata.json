@@ -1,0 +1,18 @@
+{
+  "source_contract": "SQuAD v2.0 + ABCD public customer-dialogue subset",
+  "output_csv": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\text\\strict_text_intents.csv",
+  "rows": 11242,
+  "label_counts": {
+    "complaint": 1759,
+    "consult": 4803,
+    "howto": 2183,
+    "refund": 1471,
+    "repair": 1026
+  },
+  "source_counts": {
+    "ABCD": 10042,
+    "SQuAD": 1200
+  },
+  "max_squad_questions": 1200,
+  "note": "SQuAD questions are used as public QA/consult text. ABCD conversations provide the customer-service intent distribution mapped to the five screenshot-required intents."
+}

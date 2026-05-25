@@ -1,0 +1,60 @@
+{
+  "task": "packaged course demo test data verification",
+  "data_dir": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\course_demo_test_data",
+  "samples": 5,
+  "passed": 5,
+  "accuracy": 1.0,
+  "rows": [
+    {
+      "case_id": "01_fault_repair",
+      "scenario": "故障报修",
+      "expected_intent": "repair",
+      "predicted_intent": "repair",
+      "expected_screenshot_class": "fault",
+      "predicted_screenshot_class": "fault",
+      "confidence": 0.9924,
+      "ok": true
+    },
+    {
+      "case_id": "02_order_consult",
+      "scenario": "订单咨询",
+      "expected_intent": "consult",
+      "predicted_intent": "consult",
+      "expected_screenshot_class": "order",
+      "predicted_screenshot_class": "order",
+      "confidence": 0.7193,
+      "ok": true
+    },
+    {
+      "case_id": "03_refund",
+      "scenario": "退款售后",
+      "expected_intent": "refund",
+      "predicted_intent": "refund",
+      "expected_screenshot_class": "refund",
+      "predicted_screenshot_class": "refund",
+      "confidence": 0.5596,
+      "ok": true
+    },
+    {
+      "case_id": "04_howto",
+      "scenario": "操作指引",
+      "expected_intent": "howto",
+      "predicted_intent": "howto",
+      "expected_screenshot_class": "howto",
+      "predicted_screenshot_class": "howto",
+      "confidence": 0.7159,
+      "ok": true
+    },
+    {
+      "case_id": "05_complaint",
+      "scenario": "投诉",
+      "expected_intent": "complaint",
+      "predicted_intent": "complaint",
+      "expected_screenshot_class": "normal",
+      "predicted_screenshot_class": "normal",
+      "confidence": 0.9939,
+      "ok": true
+    }
+  ],
+  "note": "Uploads each packaged course_demo_test_data case to Flask /api/predict."
+}

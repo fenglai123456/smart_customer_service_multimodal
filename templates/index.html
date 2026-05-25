@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>智能客服多模态接待场景</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">AI</span>
+          <div>
+            <h1>多模态智能客服演示工作台</h1>
+            <p>文本意图 · 语音声学 · 表情识别 · 业务截图 · 融合决策</p>
+          </div>
+        </div>
+        <div class="route-strip" aria-label="技术路线">
+          <span>BERT/TF-IDF</span>
+          <span>LSTM</span>
+          <span>FER CNN</span>
+          <span>截图 CNN + OCR规则</span>
+          <span>融合 MLP</span>
+        </div>
+      </header>
+
+      <section class="workspace" aria-label="智能客服工作台">
+        <aside class="sidebar panel">
+          <div class="panel-header compact">
+            <div>
+              <h2>课程演示数据</h2>
+              <p>每个用例对应一个完整测试文件夹</p>
+            </div>
+          </div>
+
+          <div class="metric-grid">
+            <div class="metric">
+              <span>支持模态</span>
+              <strong>5</strong>
+            </div>
+            <div class="metric">
+              <span>核心意图</span>
+              <strong>5</strong>
+            </div>
+            <div class="metric">
+              <span>演示集</span>
+              <strong>5</strong>
+            </div>
+          </div>
+
+          <div class="demo-case-list" id="demoCaseList">
+            <button class="demo-case-card active" type="button" disabled>正在读取演示数据...</button>
+          </div>
+
+          <div class="case-detail" id="caseDetail">
+            <span>演示文件</span>
+            <p>选择左侧用例后显示截图、表情图和音频文件。</p>
+          </div>
+
+          <button class="primary-button full-width" id="runCaseButton" type="button" disabled>一键运行当前用例</button>
+        </aside>
+
+        <section class="panel input-panel">
+          <div class="panel-header">
+            <div>
+              <h2>手动客服工单</h2>
+              <p>可手动填写，也可点击左侧用例自动带入</p>
+            </div>
+            <button class="ghost-button" id="fillDemo" type="button">填入示例</button>
+          </div>
+
+          <form id="serviceForm">
+            <div class="form-grid">
+              <label class="field text-field">
+                <span>文字诉求</span>
+                <textarea name="text" id="textInput" rows="5" placeholder="例如：页面一直报错，我已经付款但订单显示失败，想找人工处理"></textarea>
+              </label>
+
+              <label class="field">
+                <span>语音转写</span>
+                <input name="voice_text" id="voiceInput" type="text" placeholder="可填写 ASR 结果，例如：我现在很着急，麻烦快点处理" />
+              </label>
+            </div>
+
+            <div class="input-card-grid">
+              <div class="upload-panel">
+                <label class="upload-box" for="imageInput">
+                  <input name="image" id="imageInput" type="file" accept="image/*" />
+                  <span class="upload-icon">+</span>
+                  <strong>业务截图</strong>
+                  <small id="fileName">上传客服截图/故障页面</small>
+                </label>
+                <div class="file-preview image-preview is-empty" id="imagePreview" aria-live="polite">
+                  <span>未选择业务截图</span>
+                </div>
+              </div>
+
+              <div class="upload-panel">
+                <label class="upload-box" for="emotionImageInput">
+                  <input name="emotion_image" id="emotionImageInput" type="file" accept="image/*" />
+                  <span class="upload-icon">+</span>
+                  <strong>表情图片</strong>
+                  <small id="emotionImageName">上传 FER-2013 人脸样例</small>
+                </label>
+                <div class="file-preview image-preview is-empty" id="emotionImagePreview" aria-live="polite">
+                  <span>未选择表情图片</span>
+                </div>
+              </div>
+
+              <div class="upload-panel">
+                <label class="upload-box" for="audioInput">
+                  <input name="audio" id="audioInput" type="file" accept="audio/*,.flac" />
+                  <span class="upload-icon">+</span>
+                  <strong>语音文件</strong>
+                  <small id="audioName">支持 WAV、MP3、FLAC</small>
+                </label>
+                <div class="file-preview audio-preview is-empty" id="audioPreview" aria-live="polite">
+                  <span>未选择语音文件</span>
+                </div>
+              </div>
+
+              <div class="emotion-card">
+                <span>手动情绪</span>
+                <div class="segmented" role="radiogroup" aria-label="表情情绪">
+                  <label><input type="radio" name="emotion" value="neutral" checked />平静</label>
+                  <label><input type="radio" name="emotion" value="happy" />积极</label>
+                  <label><input type="radio" name="emotion" value="anxious" />焦急</label>
+                  <label><input type="radio" name="emotion" value="angry" />愤怒</label>
+                  <label><input type="radio" name="emotion" value="sad" />低落</label>
+                </div>
+              </div>
+            </div>
+
+            <label class="toggle-row">
+              <input name="auto_transcribe" id="autoTranscribe" type="checkbox" />
+              <span>使用本地 ASR 模型自动转写音频</span>
+            </label>
+
+            <div class="button-row">
+              <button class="primary-button" type="submit">识别当前工单</button>
+              <button class="secondary-button" id="resetForm" type="button">清空</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel result-panel">
+          <div class="panel-header">
+            <div>
+              <h2>识别结果与服务推荐</h2>
+              <p id="ticketMeta">等待用户输入</p>
+            </div>
+            <span class="status-pill" id="handoffStatus">自动接待</span>
+          </div>
+
+          <div class="decision-card">
+            <div>
+              <span>最终意图</span>
+              <strong id="intentLabel">未识别</strong>
+            </div>
+            <div class="confidence">
+              <span>融合置信度</span>
+              <strong id="confidenceValue">0%</strong>
+            </div>
+          </div>
+
+          <div class="service-card" id="serviceCard">
+            <span>推荐服务</span>
+            <strong>等待识别</strong>
+            <p>提交后展示系统推荐的客服动作。</p>
+          </div>
+
+          <div class="reply-box">
+            <span>智能回复</span>
+            <p id="replyText">提交后将根据多模态特征生成回复与引导流程。</p>
+          </div>
+
+          <div class="flow-block">
+            <h3>处理步骤</h3>
+            <ol id="stepList">
+              <li>等待识别结果</li>
+            </ol>
+          </div>
+
+          <div class="ranking">
+            <h3>五类意图得分</h3>
+            <div id="rankingBars"></div>
+          </div>
+
+          <div class="analysis-grid">
+            <div>
+              <h3>融合依据</h3>
+              <ul id="reasonList">
+                <li>暂无分析</li>
+              </ul>
+            </div>
+            <div>
+              <h3>模态摘要</h3>
+              <dl id="signalList">
+                <dt>文字</dt>
+                <dd>未输入</dd>
+                <dt>语音</dt>
+                <dd>未上传</dd>
+                <dt>表情图</dt>
+                <dd>未上传</dd>
+                <dt>截图</dt>
+                <dd>未上传</dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="fusion-panel">
+            <div class="fusion-panel-header">
+              <h3>多模态特征拼接 + 全连接融合</h3>
+              <span id="fusionStatus">未启用</span>
+            </div>
+            <div id="fusionFeatureList" class="fusion-feature-list">
+              <p>提交后展示 26 维拼接特征和 MLP 融合结构。</p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

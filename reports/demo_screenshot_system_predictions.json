@@ -1,0 +1,527 @@
+{
+  "task": "system-level demo screenshot prediction verification",
+  "samples": 60,
+  "accuracy": 1.0,
+  "label_counts": {
+    "fault": 12,
+    "howto": 12,
+    "normal": 12,
+    "order": 12,
+    "refund": 12
+  },
+  "classification_report": {
+    "fault": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 12.0
+    },
+    "order": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 12.0
+    },
+    "refund": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 12.0
+    },
+    "howto": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 12.0
+    },
+    "normal": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 12.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 60.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 60.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "fault",
+      "order",
+      "refund",
+      "howto",
+      "normal"
+    ],
+    "matrix": [
+      [
+        12,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        12,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        12,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        12,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        12
+      ]
+    ]
+  },
+  "failed": [],
+  "rows": [
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\fault\\fault_0001.png",
+      "expected": "fault",
+      "predicted": "fault",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\fault\\fault_0002.png",
+      "expected": "fault",
+      "predicted": "fault",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\fault\\fault_0003.png",
+      "expected": "fault",
+      "predicted": "fault",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\fault\\fault_0004.png",
+      "expected": "fault",
+      "predicted": "fault",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\fault\\fault_0005.png",
+      "expected": "fault",
+      "predicted": "fault",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\fault\\fault_0006.png",
+      "expected": "fault",
+      "predicted": "fault",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\fault\\fault_0007.png",
+      "expected": "fault",
+      "predicted": "fault",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\fault\\fault_0008.png",
+      "expected": "fault",
+      "predicted": "fault",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\fault\\fault_0009.png",
+      "expected": "fault",
+      "predicted": "fault",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\fault\\fault_0010.png",
+      "expected": "fault",
+      "predicted": "fault",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\fault\\fault_0011.png",
+      "expected": "fault",
+      "predicted": "fault",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\fault\\fault_0012.png",
+      "expected": "fault",
+      "predicted": "fault",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\order\\order_0001.png",
+      "expected": "order",
+      "predicted": "order",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\order\\order_0002.png",
+      "expected": "order",
+      "predicted": "order",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\order\\order_0003.png",
+      "expected": "order",
+      "predicted": "order",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\order\\order_0004.png",
+      "expected": "order",
+      "predicted": "order",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\order\\order_0005.png",
+      "expected": "order",
+      "predicted": "order",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\order\\order_0006.png",
+      "expected": "order",
+      "predicted": "order",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\order\\order_0007.png",
+      "expected": "order",
+      "predicted": "order",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\order\\order_0008.png",
+      "expected": "order",
+      "predicted": "order",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\order\\order_0009.png",
+      "expected": "order",
+      "predicted": "order",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\order\\order_0010.png",
+      "expected": "order",
+      "predicted": "order",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\order\\order_0011.png",
+      "expected": "order",
+      "predicted": "order",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\order\\order_0012.png",
+      "expected": "order",
+      "predicted": "order",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\refund\\refund_0001.png",
+      "expected": "refund",
+      "predicted": "refund",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\refund\\refund_0002.png",
+      "expected": "refund",
+      "predicted": "refund",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\refund\\refund_0003.png",
+      "expected": "refund",
+      "predicted": "refund",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\refund\\refund_0004.png",
+      "expected": "refund",
+      "predicted": "refund",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\refund\\refund_0005.png",
+      "expected": "refund",
+      "predicted": "refund",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\refund\\refund_0006.png",
+      "expected": "refund",
+      "predicted": "refund",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\refund\\refund_0007.png",
+      "expected": "refund",
+      "predicted": "refund",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\refund\\refund_0008.png",
+      "expected": "refund",
+      "predicted": "refund",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\refund\\refund_0009.png",
+      "expected": "refund",
+      "predicted": "refund",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\refund\\refund_0010.png",
+      "expected": "refund",
+      "predicted": "refund",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\refund\\refund_0011.png",
+      "expected": "refund",
+      "predicted": "refund",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\refund\\refund_0012.png",
+      "expected": "refund",
+      "predicted": "refund",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\howto\\howto_0001.png",
+      "expected": "howto",
+      "predicted": "howto",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\howto\\howto_0002.png",
+      "expected": "howto",
+      "predicted": "howto",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\howto\\howto_0003.png",
+      "expected": "howto",
+      "predicted": "howto",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\howto\\howto_0004.png",
+      "expected": "howto",
+      "predicted": "howto",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\howto\\howto_0005.png",
+      "expected": "howto",
+      "predicted": "howto",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\howto\\howto_0006.png",
+      "expected": "howto",
+      "predicted": "howto",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\howto\\howto_0007.png",
+      "expected": "howto",
+      "predicted": "howto",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\howto\\howto_0008.png",
+      "expected": "howto",
+      "predicted": "howto",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\howto\\howto_0009.png",
+      "expected": "howto",
+      "predicted": "howto",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\howto\\howto_0010.png",
+      "expected": "howto",
+      "predicted": "howto",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\howto\\howto_0011.png",
+      "expected": "howto",
+      "predicted": "howto",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\howto\\howto_0012.png",
+      "expected": "howto",
+      "predicted": "howto",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\normal\\normal_0001.png",
+      "expected": "normal",
+      "predicted": "normal",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\normal\\normal_0002.png",
+      "expected": "normal",
+      "predicted": "normal",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\normal\\normal_0003.png",
+      "expected": "normal",
+      "predicted": "normal",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\normal\\normal_0004.png",
+      "expected": "normal",
+      "predicted": "normal",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\normal\\normal_0005.png",
+      "expected": "normal",
+      "predicted": "normal",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\normal\\normal_0006.png",
+      "expected": "normal",
+      "predicted": "normal",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\normal\\normal_0007.png",
+      "expected": "normal",
+      "predicted": "normal",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\normal\\normal_0008.png",
+      "expected": "normal",
+      "predicted": "normal",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\normal\\normal_0009.png",
+      "expected": "normal",
+      "predicted": "normal",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\normal\\normal_0010.png",
+      "expected": "normal",
+      "predicted": "normal",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\normal\\normal_0011.png",
+      "expected": "normal",
+      "predicted": "normal",
+      "confidence": 1.0,
+      "ok": true
+    },
+    {
+      "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\customer_screenshots\\test\\normal\\normal_0012.png",
+      "expected": "normal",
+      "predicted": "normal",
+      "confidence": 1.0,
+      "ok": true
+    }
+  ],
+  "note": "Uses the same customer_ai.image_analyzer.analyze_image path as the Flask app."
+}

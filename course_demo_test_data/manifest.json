@@ -1,0 +1,84 @@
+﻿{
+    "name":  "course_demo_test_data",
+    "usage":  "course_demo_only",
+    "generated_at":  "2026-05-22 23:24:09",
+    "cases":  [
+                  {
+                      "case_id":  "01_fault_repair",
+                      "scenario":  "故障报修",
+                      "text":  "页面一直报错，支付失败，帮我报修",
+                      "voice_text":  "我现在有点着急，页面一直支付失败，麻烦尽快帮我处理",
+                      "emotion":  "anxious",
+                      "screenshot_file":  "fault_0001.png",
+                      "emotion_image_file":  "face_01_fault_nonangry_fer2013.png",
+                      "audio_file":  "voice_01_fault_librispeech.flac",
+                      "expected_screenshot_class":  "fault",
+                      "expected_intent":  "repair",
+                      "expected_intent_label":  "故障报修",
+                      "note":  "完整多模态演示用例：故障截图 + 焦虑情绪 + 负向语音转写。"
+                  },
+                  {
+                      "case_id":  "02_order_consult",
+                      "scenario":  "订单咨询",
+                      "text":  "我想查订单物流和配送进度",
+                      "voice_text":  "帮我看一下这个订单现在发到哪里了",
+                      "emotion":  "neutral",
+                      "screenshot_file":  "order_0001.png",
+                      "emotion_image_file":  "face_02_order_nonangry_fer2013.png",
+                      "audio_file":  "voice_02_order_librispeech.flac",
+                      "expected_screenshot_class":  "order",
+                      "expected_intent":  "consult",
+                      "expected_intent_label":  "咨询",
+                      "note":  "完整多模态演示用例：订单截图 + 中性表情 + 订单查询文本。"
+                  },
+                  {
+                      "case_id":  "03_refund",
+                      "scenario":  "退款售后",
+                      "text":  "我要申请退款，想知道钱什么时候退回",
+                      "voice_text":  "订单取消了，我需要尽快退款",
+                      "emotion":  "neutral",
+                      "screenshot_file":  "refund_0001.png",
+                      "emotion_image_file":  "face_03_refund_nonangry_fer2013.png",
+                      "audio_file":  "voice_03_refund_librispeech.flac",
+                      "expected_screenshot_class":  "refund",
+                      "expected_intent":  "refund",
+                      "expected_intent_label":  "退款",
+                      "note":  "完整多模态演示用例：退款截图 + 退款文本。"
+                  },
+                  {
+                      "case_id":  "04_howto",
+                      "scenario":  "操作指引",
+                      "text":  "我不会操作，帮我一步一步说明",
+                      "voice_text":  "我找不到入口，麻烦告诉我怎么设置",
+                      "emotion":  "neutral",
+                      "screenshot_file":  "howto_0001.png",
+                      "emotion_image_file":  "face_04_howto_nonangry_fer2013.png",
+                      "audio_file":  "voice_04_howto_librispeech.flac",
+                      "expected_screenshot_class":  "howto",
+                      "expected_intent":  "howto",
+                      "expected_intent_label":  "操作引导",
+                      "note":  "完整多模态演示用例：操作指引截图 + 不会操作文本。"
+                  },
+                  {
+                      "case_id":  "05_complaint",
+                      "scenario":  "投诉",
+                      "text":  "客服一直不回复，服务态度太差了，我要投诉",
+                      "voice_text":  "我等了很久没人处理，要求人工升级处理",
+                      "emotion":  "angry",
+                      "screenshot_file":  "normal_0001.png",
+                      "emotion_image_file":  "face_05_complaint_angry_fer2013.png",
+                      "audio_file":  "voice_05_complaint_librispeech.flac",
+                      "expected_screenshot_class":  "normal",
+                      "expected_intent":  "complaint",
+                      "expected_intent_label":  "投诉",
+                      "note":  "完整多模态演示用例：普通客服页面截图 + 愤怒表情 + 投诉文本，覆盖投诉识别与转人工场景。"
+                  }
+              ],
+    "verification":  {
+                         "command":  ".\\.venv\\Scripts\\python.exe scripts\\verify_packaged_course_demo_data.py",
+                         "report":  "reports/packaged_course_demo_data_predictions.json",
+                         "latest_accuracy":  1
+                     },
+    "note":  "Each child folder is one complete Web/API demo test case. These files are for classroom demonstration, not strict public-dataset evidence."
+}
+

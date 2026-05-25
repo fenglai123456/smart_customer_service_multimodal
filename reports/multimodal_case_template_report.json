@@ -1,0 +1,24 @@
+{
+  "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\multimodal\\customer_cases.csv",
+  "fields": [
+    "case_id",
+    "label",
+    "text",
+    "voice_text",
+    "audio_path",
+    "emotion_label",
+    "emotion_image_path",
+    "screenshot_path",
+    "source_dataset",
+    "source_note"
+  ],
+  "strict_note": "Rows must be real multimodal cases assembled from screenshot-allowed sources. Do not fill this with demo/template samples for strict training.",
+  "minimum_recommendation": "At least dozens per intent for a classroom demo; preferably 100+ per intent for a credible 82%+ claim.",
+  "allowed_labels": [
+    "consult",
+    "complaint",
+    "refund",
+    "repair",
+    "howto"
+  ]
+}

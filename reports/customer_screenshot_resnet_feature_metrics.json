@@ -1,0 +1,294 @@
+{
+  "model": "ImageNet ResNet18 frozen features + LogisticRegression",
+  "task": "five-class customer-service screenshot intent classification",
+  "strict_sources": true,
+  "source_contract": "customer screenshot public subset; grouped by original public source page id",
+  "labels": [
+    "fault",
+    "order",
+    "refund",
+    "howto",
+    "normal"
+  ],
+  "samples": 1748,
+  "label_counts": {
+    "fault": 322,
+    "howto": 331,
+    "normal": 398,
+    "order": 341,
+    "refund": 356
+  },
+  "train_size": 1402,
+  "test_size": 346,
+  "split": {
+    "strategy": "per-label source-group holdout",
+    "labels": {
+      "fault": {
+        "train_groups": [
+          "public_source_001",
+          "public_source_002",
+          "public_source_003",
+          "public_source_004",
+          "public_source_005",
+          "public_source_026",
+          "public_source_027",
+          "public_source_028",
+          "public_source_029",
+          "public_source_051",
+          "public_source_052",
+          "public_source_054",
+          "public_source_055",
+          "public_source_056",
+          "public_source_058",
+          "public_source_059",
+          "public_source_101",
+          "public_source_102",
+          "public_source_103",
+          "public_source_104",
+          "public_source_105"
+        ],
+        "test_groups": [
+          "public_source_030",
+          "public_source_053",
+          "public_source_057",
+          "public_source_060",
+          "public_source_106"
+        ],
+        "train_images": 260,
+        "test_images": 62
+      },
+      "order": {
+        "train_groups": [
+          "abcd_action_example",
+          "public_source_006",
+          "public_source_008",
+          "public_source_009",
+          "public_source_010",
+          "public_source_031",
+          "public_source_033",
+          "public_source_034",
+          "public_source_035",
+          "public_source_061",
+          "public_source_063",
+          "public_source_064",
+          "public_source_065",
+          "public_source_066",
+          "public_source_067",
+          "public_source_068",
+          "public_source_070",
+          "public_source_108",
+          "public_source_109",
+          "public_source_110",
+          "public_source_111",
+          "public_source_112"
+        ],
+        "test_groups": [
+          "public_source_007",
+          "public_source_032",
+          "public_source_062",
+          "public_source_069",
+          "public_source_107"
+        ],
+        "train_images": 275,
+        "test_images": 66
+      },
+      "refund": {
+        "train_groups": [
+          "public_source_011",
+          "public_source_012",
+          "public_source_014",
+          "public_source_015",
+          "public_source_036",
+          "public_source_037",
+          "public_source_038",
+          "public_source_039",
+          "public_source_071",
+          "public_source_073",
+          "public_source_075",
+          "public_source_076",
+          "public_source_077",
+          "public_source_078",
+          "public_source_079",
+          "public_source_080",
+          "public_source_113",
+          "public_source_114",
+          "public_source_116",
+          "public_source_117",
+          "public_source_118",
+          "public_source_119"
+        ],
+        "test_groups": [
+          "abcd_agent_dashboard",
+          "public_source_013",
+          "public_source_040",
+          "public_source_072",
+          "public_source_074",
+          "public_source_115"
+        ],
+        "train_images": 279,
+        "test_images": 77
+      },
+      "howto": {
+        "train_groups": [
+          "abcd_faq_screenshot",
+          "public_source_016",
+          "public_source_018",
+          "public_source_019",
+          "public_source_020",
+          "public_source_041",
+          "public_source_042",
+          "public_source_043",
+          "public_source_044",
+          "public_source_045",
+          "public_source_081",
+          "public_source_082",
+          "public_source_083",
+          "public_source_084",
+          "public_source_085",
+          "public_source_087",
+          "public_source_120",
+          "public_source_121",
+          "public_source_122",
+          "public_source_123",
+          "public_source_124"
+        ],
+        "test_groups": [
+          "public_source_017",
+          "public_source_086",
+          "public_source_088",
+          "public_source_089",
+          "public_source_090"
+        ],
+        "train_images": 271,
+        "test_images": 60
+      },
+      "normal": {
+        "train_groups": [
+          "abcd_customer_site",
+          "public_source_022",
+          "public_source_023",
+          "public_source_024",
+          "public_source_025",
+          "public_source_046",
+          "public_source_047",
+          "public_source_048",
+          "public_source_049",
+          "public_source_092",
+          "public_source_093",
+          "public_source_094",
+          "public_source_096",
+          "public_source_097",
+          "public_source_098",
+          "public_source_100",
+          "public_source_125",
+          "public_source_126",
+          "public_source_127",
+          "public_source_128"
+        ],
+        "test_groups": [
+          "public_source_021",
+          "public_source_050",
+          "public_source_091",
+          "public_source_095",
+          "public_source_099"
+        ],
+        "train_images": 317,
+        "test_images": 81
+      }
+    }
+  },
+  "device": "cuda",
+  "accuracy": 0.2659,
+  "classification_report": {
+    "fault": {
+      "precision": 0.1506849315068493,
+      "recall": 0.1774193548387097,
+      "f1-score": 0.16296296296296298,
+      "support": 62.0
+    },
+    "order": {
+      "precision": 0.09259259259259259,
+      "recall": 0.07575757575757576,
+      "f1-score": 0.08333333333333333,
+      "support": 66.0
+    },
+    "refund": {
+      "precision": 0.3611111111111111,
+      "recall": 0.5064935064935064,
+      "f1-score": 0.42162162162162165,
+      "support": 77.0
+    },
+    "howto": {
+      "precision": 0.1323529411764706,
+      "recall": 0.15,
+      "f1-score": 0.140625,
+      "support": 60.0
+    },
+    "normal": {
+      "precision": 0.6511627906976745,
+      "recall": 0.345679012345679,
+      "f1-score": 0.45161290322580644,
+      "support": 81.0
+    },
+    "accuracy": 0.2658959537572254,
+    "macro avg": {
+      "precision": 0.2775808734169396,
+      "recall": 0.25106988988709417,
+      "f1-score": 0.2520311642287449,
+      "support": 346.0
+    },
+    "weighted avg": {
+      "precision": 0.300417615425408,
+      "recall": 0.2658959537572254,
+      "f1-score": 0.2690367448839852,
+      "support": 346.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "fault",
+      "order",
+      "refund",
+      "howto",
+      "normal"
+    ],
+    "matrix": [
+      [
+        11,
+        17,
+        23,
+        11,
+        0
+      ],
+      [
+        20,
+        5,
+        25,
+        14,
+        2
+      ],
+      [
+        16,
+        6,
+        39,
+        10,
+        6
+      ],
+      [
+        19,
+        14,
+        11,
+        9,
+        7
+      ],
+      [
+        7,
+        12,
+        10,
+        24,
+        28
+      ]
+    ]
+  },
+  "note": "This fast upper-bound check uses frozen public ImageNet features and does not replace the CNN route. It helps decide whether more training can solve the current data problem."
+}

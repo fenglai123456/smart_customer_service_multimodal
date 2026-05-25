@@ -1,0 +1,34 @@
+{
+  "model": "2-layer CNN",
+  "task": "customer screenshot vs natural image classification",
+  "samples": 10000,
+  "epochs": 8,
+  "accuracy": 1.0,
+  "classification_report": {
+    "natural_image": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1000.0
+    },
+    "customer_screenshot": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1000.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2000.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 2000.0
+    }
+  }
+}

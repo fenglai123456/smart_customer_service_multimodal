@@ -1,0 +1,19 @@
+{
+  "ready": false,
+  "path": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\multimodal\\customer_cases.csv",
+  "rows": 0,
+  "label_counts": {
+    "consult": 0,
+    "complaint": 0,
+    "refund": 0,
+    "repair": 0,
+    "howto": 0
+  },
+  "min_cases_per_label": 10,
+  "problems": [
+    "CSV has no real multimodal case rows.",
+    "Need at least 10 real cases per label. Current: consult=0, complaint=0, refund=0, repair=0, howto=0."
+  ],
+  "problem_count": 2,
+  "strict_note": "A valid row must represent one real/traceable customer-service case. Do not randomly pair unrelated text, audio, emotion images, and screenshots."
+}

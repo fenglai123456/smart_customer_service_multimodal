@@ -1,0 +1,176 @@
+{
+  "task": "course demo audio and emotion media preparation",
+  "audio": [
+    {
+      "file": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\media\\audio\\voice_01_public_librispeech.flac",
+      "source": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\audio\\librispeech\\LibriSpeech\\dev-clean\\1272\\128104\\1272-128104-0000.flac",
+      "transcript": "MISTER QUILTER IS THE APOSTLE OF THE MIDDLE CLASSES AND WE ARE GLAD TO WELCOME HIS GOSPEL",
+      "result": {
+        "label": "LSTM 声学类别 3752",
+        "confidence": 0.5946,
+        "summary": "已调用 LibriSpeech LSTM 语音分支。音量有效，可参与声学分支分析。",
+        "details": {
+          "duration_sec": 5.86,
+          "sample_rate": 16000,
+          "rms": 0.05234,
+          "zero_crossing_rate": 0.17254,
+          "spectral_centroid": 2305.63,
+          "filename": "voice_01_public_librispeech.flac",
+          "model": "librispeech_lstm.pt",
+          "source": "librispeech_lstm",
+          "lstm": {
+            "label": "3752",
+            "confidence": 0.5946,
+            "probabilities": {
+              "1462": 0.134,
+              "2277": 0.0044,
+              "2428": 0.0087,
+              "3081": 0.0734,
+              "3752": 0.5946,
+              "5694": 0.0515,
+              "6313": 0.0312,
+              "777": 0.1022
+            },
+            "model": "librispeech_lstm.pt"
+          },
+          "fallback": null
+        },
+        "intent_scores": {
+          "consult": 0.220613,
+          "complaint": 0.227854,
+          "refund": 0.157581,
+          "repair": 0.236371,
+          "howto": 0.157581
+        }
+      }
+    },
+    {
+      "file": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\media\\audio\\voice_02_public_librispeech.flac",
+      "source": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\datasets\\audio\\librispeech\\LibriSpeech\\dev-clean\\1462\\170138\\1462-170138-0001.flac",
+      "transcript": "HUGH'S WRITTEN A DELIGHTFUL PART FOR HER AND SHE'S QUITE INEXPRESSIBLE",
+      "result": {
+        "label": "LSTM 声学类别 3752",
+        "confidence": 0.3248,
+        "summary": "已调用 LibriSpeech LSTM 语音分支。音量有效，可参与声学分支分析。",
+        "details": {
+          "duration_sec": 3.98,
+          "sample_rate": 16000,
+          "rms": 0.04496,
+          "zero_crossing_rate": 0.11389,
+          "spectral_centroid": 1544.33,
+          "filename": "voice_02_public_librispeech.flac",
+          "model": "librispeech_lstm.pt",
+          "source": "librispeech_lstm",
+          "lstm": {
+            "label": "3752",
+            "confidence": 0.3248,
+            "probabilities": {
+              "1462": 0.2472,
+              "2277": 0.0071,
+              "2428": 0.0242,
+              "3081": 0.0504,
+              "3752": 0.3248,
+              "5694": 0.1183,
+              "6313": 0.0268,
+              "777": 0.2011
+            },
+            "model": "librispeech_lstm.pt"
+          },
+          "fallback": null
+        },
+        "intent_scores": {
+          "consult": 0.223108,
+          "complaint": 0.219124,
+          "refund": 0.159363,
+          "repair": 0.239044,
+          "howto": 0.159363
+        }
+      }
+    }
+  ],
+  "emotion_faces": [
+    {
+      "file": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\media\\emotion_faces\\neutral_fer2013_demo.png",
+      "source": "FER-2013 fer2013.csv",
+      "fer2013_row_index": 3,
+      "fer2013_emotion_id": 4,
+      "expected_demo_emotion": "非愤怒表情",
+      "result": {
+        "label": "FER CNN 非愤怒",
+        "emotion": "neutral",
+        "confidence": 0.9035,
+        "summary": "FER-2013 CNN 模型判断用户表情为非愤怒。",
+        "details": {
+          "filename": "neutral_fer2013_demo.png",
+          "width": 192,
+          "height": 192,
+          "model": "fer2013_cnn.pt",
+          "task": "fer2013_expression",
+          "source": "fer2013_cnn",
+          "cnn": {
+            "class_index": 0,
+            "label": "非愤怒",
+            "emotion": "neutral",
+            "confidence": 0.9035,
+            "probabilities": {
+              "0": 0.9035,
+              "1": 0.0965
+            },
+            "model": "fer2013_cnn.pt",
+            "decision_threshold": 0.49
+          },
+          "fallback": null
+        },
+        "intent_scores": {
+          "consult": 0.2,
+          "complaint": 0.2,
+          "refund": 0.2,
+          "repair": 0.2,
+          "howto": 0.2
+        }
+      }
+    },
+    {
+      "file": "C:\\Users\\ASUS\\Desktop\\大三下课程\\多模态\\smart_customer_service\\demo_assets\\media\\emotion_faces\\angry_fer2013_demo.png",
+      "source": "FER-2013 fer2013.csv",
+      "fer2013_row_index": 10,
+      "fer2013_emotion_id": 0,
+      "expected_demo_emotion": "愤怒/不满表情",
+      "result": {
+        "label": "FER CNN 愤怒",
+        "emotion": "angry",
+        "confidence": 0.8761,
+        "summary": "FER-2013 CNN 模型判断用户表情为愤怒。",
+        "details": {
+          "filename": "angry_fer2013_demo.png",
+          "width": 192,
+          "height": 192,
+          "model": "fer2013_cnn.pt",
+          "task": "fer2013_expression",
+          "source": "fer2013_cnn",
+          "cnn": {
+            "class_index": 1,
+            "label": "愤怒",
+            "emotion": "angry",
+            "confidence": 0.8761,
+            "probabilities": {
+              "0": 0.1239,
+              "1": 0.8761
+            },
+            "model": "fer2013_cnn.pt",
+            "decision_threshold": 0.49
+          },
+          "fallback": null
+        },
+        "intent_scores": {
+          "consult": 0.12264,
+          "complaint": 0.401996,
+          "refund": 0.230085,
+          "repair": 0.12264,
+          "howto": 0.12264
+        }
+      }
+    }
+  ],
+  "note": "Audio samples are copied from the local LibriSpeech dev-clean public dataset. Emotion images are exported from local FER-2013 CSV for course demo uploads."
+}
