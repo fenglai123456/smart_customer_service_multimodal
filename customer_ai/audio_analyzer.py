@@ -1,3 +1,10 @@
+"""Audio modality branch for the multimodal customer-service demo.
+
+This module turns an uploaded audio file into two kinds of signals:
+1. acoustic metadata shown on the frontend, such as duration, RMS and MFCC;
+2. five intent scores that can be concatenated with text/emotion/image scores.
+"""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -18,6 +25,8 @@ _LSTM_LABELS: list[str] = []
 
 
 class AudioLSTM(nn.Module):
+    """Small LSTM classifier used when the LibriSpeech acoustic model is present."""
+
     def __init__(self, n_mfcc: int, hidden_size: int, num_classes: int, num_layers: int = 1):
         super().__init__()
         dropout = 0.2 if num_layers > 1 else 0.0
@@ -40,6 +49,14 @@ class AudioSignals:
 
 
 def analyze_audio(path: str | Path | None) -> AudioSignals | None:
+    """Extract acoustic features and return the audio branch signal.
+
+    The web system does not rely on audio alone to decide the final intent.
+    Instead, this function converts audio into a compact score dictionary; the
+    intent engine later places those five scores into the 26-dimensional fusion
+    vector used by the fully connected MLP.
+    """
+
     if not path:
         return None
 
@@ -47,6 +64,8 @@ def analyze_audio(path: str | Path | None) -> AudioSignals | None:
     if not audio_path.exists():
         return None
 
+    # Normalize every uploaded clip to 16 kHz and cap it at eight seconds so the
+    # classroom demo remains fast even when a longer recording is uploaded.
     audio, sr = librosa.load(audio_path, sr=16000, duration=8.0)
     if audio.size == 0:
         return AudioSignals(
@@ -61,6 +80,8 @@ def analyze_audio(path: str | Path | None) -> AudioSignals | None:
     rms = float(np.mean(librosa.feature.rms(y=audio)))
     zcr = float(np.mean(librosa.feature.zero_crossing_rate(y=audio)))
     centroid = float(np.mean(librosa.feature.spectral_centroid(y=audio, sr=sr)))
+    # Two feature forms are prepared: sequence MFCC for the LSTM branch and
+    # summary statistics for the lightweight fallback classifier.
     stats_features = extract_stats(audio, sr)
     sequence_features = extract_mfcc_sequence(audio, sr)
 
@@ -112,6 +133,8 @@ def analyze_audio(path: str | Path | None) -> AudioSignals | None:
 
 
 def extract_stats(audio: np.ndarray, sr: int) -> np.ndarray:
+    """Build fixed-length MFCC/statistical features for the fallback classifier."""
+
     mfcc = librosa.feature.mfcc(y=audio, sr=sr, n_mfcc=20)
     delta = librosa.feature.delta(mfcc)
     zcr = librosa.feature.zero_crossing_rate(y=audio)
@@ -121,6 +144,8 @@ def extract_stats(audio: np.ndarray, sr: int) -> np.ndarray:
 
 
 def extract_mfcc_sequence(audio: np.ndarray, sr: int, n_mfcc: int = 20, max_frames: int = 120) -> np.ndarray:
+    """Build a padded MFCC sequence so every clip has the same LSTM input shape."""
+
     mfcc = librosa.feature.mfcc(y=audio, sr=sr, n_mfcc=n_mfcc).T
     if len(mfcc) < max_frames:
         pad = np.zeros((max_frames - len(mfcc), n_mfcc), dtype=np.float32)
@@ -129,6 +154,8 @@ def extract_mfcc_sequence(audio: np.ndarray, sr: int, n_mfcc: int = 20, max_fram
 
 
 def _predict_lstm(features: np.ndarray) -> dict | None:
+    """Run the optional LSTM model and expose probabilities for reporting."""
+
     model = _load_lstm_model()
     if model is None:
         return None
@@ -150,6 +177,8 @@ def _predict_lstm(features: np.ndarray) -> dict | None:
 
 
 def _load_lstm_model():
+    """Lazy-load the LSTM once and reuse it across web requests."""
+
     global _LSTM_MODEL, _LSTM_LABELS
     if _LSTM_MODEL is not None:
         return _LSTM_MODEL
@@ -170,6 +199,14 @@ def _load_lstm_model():
 
 
 def infer_audio_intent_scores(rms: float, zcr: float, centroid: float, confidence: float) -> dict[str, float]:
+    """Map acoustic cues into the shared five-intent score space.
+
+    These scores are intentionally lightweight: high energy / high spectral
+    centroid increases complaint or repair evidence, while low energy can hint
+    that the user needs operation guidance. Text and screenshot branches still
+    carry the main business semantics in the final fusion.
+    """
+
     scores = {
         "consult": 0.20,
         "complaint": 0.20,
@@ -194,6 +231,8 @@ def infer_audio_intent_scores(rms: float, zcr: float, centroid: float, confidenc
 
 
 def infer_confidence(model, features: np.ndarray) -> float:
+    """Return a normalized confidence for sklearn-style fallback classifiers."""
+
     if hasattr(model, "predict_proba"):
         probabilities = model.predict_proba([features])[0]
         return float(np.max(probabilities))

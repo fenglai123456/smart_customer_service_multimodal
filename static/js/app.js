@@ -29,6 +29,8 @@ const runCaseButton = document.querySelector("#runCaseButton");
 const serviceCard = document.querySelector("#serviceCard");
 const resultPanel = document.querySelector(".result-panel");
 
+// Frontend state: demo cases come from /api/demo-cases, while object URLs are
+// used only for local previews of files manually uploaded during the recording.
 let demoCases = [];
 let selectedCase = null;
 const objectUrls = {
@@ -62,6 +64,8 @@ const serviceMap = {
 
 loadDemoCases();
 
+// Quick-fill button for manual demonstrations; the one-click demo case flow
+// below remains the recommended path for the final recorded video.
 fillDemo.addEventListener("click", () => {
   textInput.value = "页面上传截图后一直报错，我已经付款但订单显示失败，想申请退款并找人工处理。";
   voiceInput.value = "我现在有点着急，麻烦尽快帮我看一下。";
@@ -114,6 +118,8 @@ runCaseButton.addEventListener("click", async () => {
   }
 });
 
+// Manual upload path: send text, ASR text, audio, expression image and business
+// screenshot to /api/predict so the backend can run the same multimodal fusion.
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   setLoading(true, "正在融合文字、语音转写、音频声学、表情和图片特征...");
@@ -170,6 +176,8 @@ function renderDemoCases() {
 }
 
 function selectCase(demoCase) {
+  // Selecting a course demo case fills all visible controls and shows previews
+  // of the screenshot, expression image and audio file before prediction.
   selectedCase = demoCase;
   document.querySelectorAll(".demo-case-card").forEach((button) => {
     button.classList.toggle("active", button.dataset.caseId === demoCase.case_id);
@@ -237,6 +245,8 @@ function renderAudioPreview(input, labelEl, previewEl, key, placeholder, emptyTe
 }
 
 function renderDemoFilePreviews(demoCase) {
+  // Packaged demo files are served by Flask, so previews work without requiring
+  // the user to manually select local files during class presentation.
   clearAllPreviews();
   renderRemoteImagePreview(imagePreview, demoCase.file_urls?.screenshot, demoCase.screenshot_file, "演示业务截图");
   renderRemoteImagePreview(emotionImagePreview, demoCase.file_urls?.emotion_image, demoCase.emotion_image_file, "演示表情图片");
@@ -298,6 +308,8 @@ function setFileLabel(element, value) {
 }
 
 function renderResult(data) {
+  // The backend response contains both business-facing fields and technical
+  // explanation fields; this renderer keeps them visible for the report video.
   const prediction = data.prediction;
   const percent = Math.round(prediction.confidence * 100);
 
@@ -349,6 +361,8 @@ function renderReasons(reasons) {
 }
 
 function renderSignals(signals) {
+  // Summarize each modality so the page proves text, audio, expression image,
+  // screenshot and fusion signals all participated in the final decision.
   const image = signals.image;
   const audio = signals.audio;
   const asr = signals.asr;
@@ -387,6 +401,8 @@ function renderRanking(ranking) {
 }
 
 function renderFusionDetails(fusion) {
+  // Display the required "feature concatenation + fully connected fusion" route:
+  // text5 + audio5 + emotion5 + image5 + numeric6 = 26-dimensional MLP input.
   if (!fusion || !fusion.details) {
     fusionStatus.textContent = "未启用";
     fusionStatus.classList.remove("warn");

@@ -1,3 +1,10 @@
+"""Facial-expression branch for multimodal intent recognition.
+
+The uploaded face/expression image is converted into an emotion label and a
+five-intent score dictionary. The score dictionary is later fused with text,
+audio and screenshot evidence by the intent engine.
+"""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -28,6 +35,8 @@ FER_LABELS = {
 
 
 class EmotionCNN(nn.Module):
+    """CNN architecture compatible with the FER-2013 weights used in the demo."""
+
     def __init__(self, num_classes: int = 7, architecture: str = "legacy"):
         super().__init__()
         if architecture == "enhanced_cnn_v2":
@@ -84,6 +93,8 @@ class EmotionSignals:
 
 
 def analyze_emotion_image(path: str | Path | None) -> EmotionSignals | None:
+    """Run FER image preprocessing, model inference and intent-score mapping."""
+
     if not path:
         return None
 
@@ -91,6 +102,9 @@ def analyze_emotion_image(path: str | Path | None) -> EmotionSignals | None:
     if not image_path.exists():
         return None
 
+    # The CNN consumes a 1x48x48 tensor, while the MLP fallback consumes the
+    # flattened vector. Preparing both keeps the branch usable in lightweight
+    # demo environments.
     vector, tensor, width, height = _preprocess(image_path)
     cnn = _predict_cnn(tensor)
     fallback = None
@@ -150,6 +164,8 @@ def analyze_emotion_image(path: str | Path | None) -> EmotionSignals | None:
 
 
 def _load_model():
+    """Lazy-load the FER CNN checkpoint and its threshold configuration."""
+
     global _EMOTION_MODEL, _EMOTION_THRESHOLD
     if _EMOTION_MODEL is not None:
         return _EMOTION_MODEL
@@ -167,6 +183,8 @@ def _load_model():
 
 
 def _load_fallback_model():
+    """Load the lightweight FER MLP used when the CNN checkpoint is unavailable."""
+
     global _FALLBACK_MODEL
     if _FALLBACK_MODEL is not None:
         return _FALLBACK_MODEL
@@ -177,6 +195,8 @@ def _load_fallback_model():
 
 
 def _preprocess(path: Path) -> tuple[np.ndarray, torch.Tensor, int, int]:
+    """Convert an uploaded image to the FER-2013 grayscale 48x48 input format."""
+
     with Image.open(path) as image:
         gray = image.convert("L")
         width, height = gray.size
@@ -188,6 +208,8 @@ def _preprocess(path: Path) -> tuple[np.ndarray, torch.Tensor, int, int]:
 
 
 def _predict_cnn(tensor: torch.Tensor) -> dict | None:
+    """Return FER CNN class probabilities and the mapped customer emotion."""
+
     model = _load_model()
     if model is None:
         return None
@@ -217,6 +239,8 @@ def _predict_cnn(tensor: torch.Tensor) -> dict | None:
 
 
 def _predict_proba(model, vector: np.ndarray) -> np.ndarray:
+    """Normalize fallback model output into a probability vector."""
+
     if hasattr(model, "predict_proba"):
         return np.asarray(model.predict_proba(vector)[0], dtype=np.float32)
 
@@ -227,6 +251,8 @@ def _predict_proba(model, vector: np.ndarray) -> np.ndarray:
 
 
 def _emotion_intent_scores(emotion: str, confidence: float) -> dict[str, float]:
+    """Map emotion evidence into the same five-intent labels used by fusion."""
+
     scores = {
         "consult": 0.20,
         "complaint": 0.20,

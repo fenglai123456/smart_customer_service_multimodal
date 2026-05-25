@@ -1,6 +1,6 @@
 ﻿{
     "name":  "course_demo_test_data",
-    "usage":  "course_demo_only",
+    "usage":  "course_demo_video_and_function_verification",
     "generated_at":  "2026-05-22 23:24:09",
     "cases":  [
                   {
@@ -79,6 +79,6 @@
                          "report":  "reports/packaged_course_demo_data_predictions.json",
                          "latest_accuracy":  1
                      },
-    "note":  "Each child folder is one complete Web/API demo test case. These files are for classroom demonstration, not strict public-dataset evidence."
+    "note":  "Each child folder is one complete Web/API demo test case for classroom demonstration, video recording, and function verification."
 }
 
